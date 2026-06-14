@@ -1,11 +1,63 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BlogChrome from '../components/BlogChrome.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import { posts } from '../data/posts.js';
+import '../styles/home.css';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const featuredPost = posts[0];
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout
+  title="Glarysoft Blog"
+  description="Product news, updates, and practical tips from the Glarysoft team."
+>
+  <main class="blog-home">
+    <section class="blog-hero">
+      <div class="blog-container blog-hero-simple">
+        <div>
+          <h1>Blog</h1>
+          <p class="blog-lead">
+            Follow the latest Glarysoft product updates, company announcements,
+            and short maintenance insights for everyday Windows users.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="blog-section">
+      <div class="blog-container">
+        <a class="featured-row" href={featuredPost.href}>
+          <img
+            src={featuredPost.featured_image}
+            alt={featuredPost.title}
+          />
+          <div>
+            <h2>{featuredPost.title}</h2>
+            <p>{featuredPost.excerpt}</p>
+          </div>
+        </a>
+
+        <div class="section-head compact-head archive-head">
+          <h2>Latest Posts</h2>
+          <a href="/posts/">View all posts</a>
+        </div>
+
+        <div class="post-list simple-list">
+          {posts.map((post) => (
+            <article class="post-row">
+              <div>
+                <p class="post-category">{post.category}</p>
+                <h3><a href={post.href}>{post.title}</a></h3>
+                <p>{post.excerpt}</p>
+              </div>
+              <time datetime={post.date}>{post.dateLabel}</time>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <BlogChrome />
+</MainLayout>

@@ -1,0 +1,48 @@
+---
+import BlogChrome from '../../../components/BlogChrome.astro';
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { getPostsByCategory } from '../../../data/posts.js';
+import '../../../styles/home.css';
+
+const category = 'Company News';
+const categoryPosts = getPostsByCategory(category);
+---
+
+<MainLayout title={`${category} | Glarysoft Blog`} description="Company news from the Glarysoft Blog.">
+  <main class="archive-page">
+    <section class="blog-hero archive-hero">
+      <div class="blog-container blog-hero-simple">
+        <nav class="blog-breadcrumb archive-breadcrumb" aria-label="Breadcrumb">
+          <a href="https://www.glarysoft.com/">Home</a>
+          <span>/</span>
+          <a href="/">Blog</a>
+        </nav>
+        <h1>{category}</h1>
+        <p class="blog-lead">Announcements, campaigns, partnerships, and Glarysoft updates.</p>
+      </div>
+    </section>
+
+    <section class="blog-section">
+      <div class="blog-container">
+        {categoryPosts.length > 0 ? (
+          <div class="post-list simple-list">
+            {categoryPosts.map((post) => (
+              <article class="post-row">
+                <div>
+                  <p class="post-category">{post.category}</p>
+                  <h3><a href={post.href}>{post.title}</a></h3>
+                  <p>{post.excerpt}</p>
+                </div>
+                <time datetime={post.date}>{post.dateLabel}</time>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p class="empty-archive">No posts in this category yet.</p>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <BlogChrome />
+</MainLayout>

@@ -1,0 +1,47 @@
+---
+import BlogChrome from '../../components/BlogChrome.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
+import { posts } from '../../data/posts.js';
+import '../../styles/home.css';
+---
+
+<MainLayout
+  title="All Posts | Glarysoft Blog"
+  description="Browse the latest product updates, company news, tips, and user stories from Glarysoft."
+>
+  <main class="archive-page">
+    <section class="blog-hero archive-hero">
+      <div class="blog-container blog-hero-simple">
+        <nav class="blog-breadcrumb archive-breadcrumb" aria-label="Breadcrumb">
+          <a href="https://www.glarysoft.com/">Home</a>
+          <span>/</span>
+          <a href="/">Blog</a>
+        </nav>
+        <h1>All Posts</h1>
+        <p class="blog-lead">
+          Browse product updates, company news, practical tips, and user stories
+          from the Glarysoft team.
+        </p>
+      </div>
+    </section>
+
+    <section class="blog-section">
+      <div class="blog-container">
+        <div class="post-list simple-list">
+          {posts.map((post) => (
+            <article class="post-row">
+              <div>
+                <p class="post-category">{post.category}</p>
+                <h3><a href={post.href}>{post.title}</a></h3>
+                <p>{post.excerpt}</p>
+              </div>
+              <time datetime={post.date}>{post.dateLabel}</time>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <BlogChrome />
+</MainLayout>

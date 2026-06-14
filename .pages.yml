@@ -1,0 +1,59 @@
+media:
+  input: public/uploads
+  output: /uploads
+
+content:
+  - name: posts
+    label: Blog Posts
+    type: collection
+    path: content/posts
+    filename: '{fields.slug}.md'
+    view:
+      fields: [title, category, date, draft]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: slug
+        label: Slug
+        type: string
+        required: true
+        pattern:
+          regex: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+          message: Use lowercase letters, numbers, and hyphens only.
+      - name: category
+        label: Category
+        type: select
+        required: true
+        options:
+          - Product Updates
+          - Company News
+          - Tips & Insights
+          - User Stories
+      - name: date
+        label: Publish Date
+        type: date
+        required: true
+      - name: excerpt
+        label: Excerpt
+        type: text
+        required: true
+      - name: featured_image
+        label: Featured Image
+        type: image
+      - name: reading_time
+        label: Reading Time
+        type: string
+      - name: draft
+        label: Draft
+        type: boolean
+        default: true
+      - name: body
+        label: Body
+        type: rich-text

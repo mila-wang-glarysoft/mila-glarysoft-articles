@@ -1,0 +1,173 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+
+const {
+  title = 'Glarysoft',
+  description = '',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="preconnect" href="https://www.glarysoft.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="https://www.glarysoft.com/css/global.css?2024081910" />
+    <link rel="stylesheet" href="https://www.glarysoft.com/css/new.css?20250205" />
+    <link rel="stylesheet" href="https://www.glarysoft.com/css/content.css?20231106" />
+    <link rel="stylesheet" href="https://www.glarysoft.com/css/layout.css?202312270229" />
+    <style is:inline>
+      .header_wrap.header_new {
+        background: #40434a;
+      }
+
+      .header_wrap.header_new .logopic {
+        display: block;
+      }
+
+      iframe#launcher {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        top: -9999px !important;
+      }
+
+      iframe#webWidget,
+      iframe[title="Zendesk Widget window"] {
+        bottom: auto !important;
+        left: 50% !important;
+        margin: 0 !important;
+        max-height: calc(100vh - 48px) !important;
+        position: fixed !important;
+        right: auto !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 500px !important;
+        z-index: 1000000 !important;
+      }
+
+      @media (max-width: 560px) {
+        iframe#webWidget,
+        iframe[title="Zendesk Widget window"] {
+          height: calc(100vh - 32px) !important;
+          width: calc(100vw - 32px) !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header />
+    <main class="site-main">
+      <slot />
+    </main>
+    <Footer />
+    <script is:inline src="/js/jquery.min.js"></script>
+    <script is:inline src="/js/lottie.js"></script>
+    <script is:inline src="/js/index.js"></script>
+    <script
+      is:inline
+      async
+      src="https://platform-api.sharethis.com/js/sharethis.js#property=5ddf37c8ec66350011363b99&product=inline-share-buttons"
+    ></script>
+    <script
+      is:inline
+      id="ze-snippet"
+      src="https://static.zdassets.com/ekr/snippet.js?key=5c22b3d4-2e69-4448-a5b6-abf543ae294f"
+    ></script>
+    <script is:inline>
+      window.openWidget = function () {
+        if (window.zE) {
+          zE("webWidget", "show");
+          zE("webWidget", "open");
+          window.centerZendeskWidget();
+        }
+      };
+
+      window.centerZendeskWidget = function () {
+        var attempts = 0;
+        var timer = window.setInterval(function () {
+          attempts += 1;
+          var widget = document.querySelector(
+            'iframe#webWidget, iframe[title="Zendesk Widget window"]'
+          );
+          var launcher = document.querySelector("iframe#launcher");
+
+          if (launcher) {
+            launcher.style.opacity = "0";
+            launcher.style.visibility = "hidden";
+            launcher.style.pointerEvents = "none";
+            launcher.style.top = "-9999px";
+          }
+
+          if (widget) {
+            widget.style.position = "fixed";
+            widget.style.left = "50%";
+            widget.style.right = "auto";
+            widget.style.top = "50%";
+            widget.style.bottom = "auto";
+            widget.style.margin = "0";
+            widget.style.transform = "translate(-50%, -50%)";
+            widget.style.zIndex = "1000000";
+            window.clearInterval(timer);
+          }
+
+          if (attempts > 20) window.clearInterval(timer);
+        }, 100);
+      };
+
+      window.removeCkLayer = function () {
+        var el = document.querySelector(".cookiesTip");
+        if (el) el.style.display = "none";
+      };
+
+      window.getGlaryLottie = function () {
+        try {
+          if (typeof lottie !== "undefined") return lottie;
+        } catch (e) {}
+        return window.lottie || window.bodymovin;
+      };
+
+      window.playStoreIcon = function () {
+        var glaryLottie = window.getGlaryLottie();
+        var store = document.getElementById("store");
+        var storeWrap = document.getElementById("store-wrap");
+
+        if (!glaryLottie || !store || !storeWrap) return;
+
+        storeWrap.style.background = "none";
+        store.style.visibility = "visible";
+        glaryLottie.stop("store");
+        glaryLottie.play("store");
+      };
+
+      window.addEventListener("load", function () {
+        var storeItem = document.querySelector("#shop");
+        if (storeItem && !storeItem.dataset.storeHoverReady) {
+          storeItem.dataset.storeHoverReady = "true";
+          storeItem.addEventListener("mouseenter", window.playStoreIcon);
+        }
+
+        if (window.zE) {
+          zE("webWidget", "hide");
+          zE("webWidget:on", "close", function () {
+            zE("webWidget", "hide");
+          });
+          window.centerZendeskWidget();
+        }
+      });
+    </script>
+  </body>
+</html>

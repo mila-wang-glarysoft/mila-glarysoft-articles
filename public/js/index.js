@@ -33,7 +33,8 @@ $(function () {
 
   // Newsletter / subscribe
   var subscribe_tip;
-  $("#subscribe").on("click", function () {
+  $("#subscribe").on("click", function (event) {
+    event.preventDefault();
     clearTimeout(subscribe_tip);
     $("#subscribe_tip").hide();
     var sub_email = $("#subscribe_email").val();
@@ -63,10 +64,15 @@ $(function () {
       }, 30000);
       return false;
     }
+    $("#subscribe_tip")
+      .removeClass()
+      .addClass("info")
+      .text("Submitting...");
+    $("#subscribe_tip").show();
     $.ajax({
       type: "POST",
       url: "/subscribe/verify.php",
-      data: "useremail=" + check_sub_email,
+      data: "useremail=" + encodeURIComponent(check_sub_email),
       success: function (msg) {
         if (msg == 1) {
           $("#subscribe_tip")
@@ -88,6 +94,16 @@ $(function () {
             .text("Frequent operation, you can try again after half an hour");
           $("#subscribe_tip").show();
         }
+        subscribe_tip = setTimeout(function () {
+          $("#subscribe_tip").hide();
+        }, 30000);
+      },
+      error: function () {
+        $("#subscribe_tip")
+          .removeClass()
+          .addClass("fail")
+          .text("Failed, please try again");
+        $("#subscribe_tip").show();
         subscribe_tip = setTimeout(function () {
           $("#subscribe_tip").hide();
         }, 30000);
@@ -1026,6 +1042,13 @@ function judgeIsNum(str) {
     return true;
   }
 }
+function getScriptSiblingPath(fileName) {
+  var script = document.querySelector('script[src*="/js/index.js"]');
+  if (script && script.src) {
+    return script.src.replace(/index\.js(?:\?.*)?$/, fileName);
+  }
+  return "/js/" + fileName;
+}
 
 function storeIcon() {
   var params = {
@@ -1033,7 +1056,7 @@ function storeIcon() {
     renderer: "svg",
     loop: false,
     autoplay: true,
-    path: "/js/buy.json",
+    path: getScriptSiblingPath("buy.json"),
     name: "store",
   };
   try {

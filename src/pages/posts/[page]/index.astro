@@ -1,0 +1,83 @@
+---
+import BlogChrome from '../../../components/BlogChrome.astro';
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { getPaginationPages, pageSize, paginate, posts } from '../../../data/posts.js';
+import '../../../styles/home.css';
+
+export function getStaticPaths() {
+  const totalPages = Math.ceil(posts.length / pageSize);
+
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => {
+    const pageNumber = index + 2;
+    return {
+      params: { page: String(pageNumber) },
+      props: { pageNumber },
+    };
+  });
+}
+
+const { pageNumber } = Astro.props;
+const page = paginate(posts, pageNumber);
+const basePath = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<MainLayout
+  title={`All Articles - Page ${page.currentPage} | Glarysoft Knowledge Base`}
+  description="Browse Glarysoft product guides, support notes, and troubleshooting articles."
+>
+  <main class="archive-page">
+    <section class="blog-hero archive-hero">
+      <div class="blog-container blog-hero-simple">
+        <nav class="blog-breadcrumb archive-breadcrumb" aria-label="Breadcrumb">
+          <a href="https://www.glarysoft.com/">Home</a>
+          <span>/</span>
+          <a href={basePath}>Knowledge Base</a>
+        </nav>
+        <h1>All Articles</h1>
+        <p class="blog-lead">Browse product guides, support notes, and troubleshooting articles from Glarysoft.</p>
+      </div>
+    </section>
+
+    <section class="blog-section">
+      <div class="blog-container">
+        <div class="post-list simple-list category-article-grid">
+          {page.items.map((post) => (
+            <article class="post-row">
+              <div>
+                <p class="post-category">{post.category}</p>
+                <h3><a href={post.href}>{post.title}</a></h3>
+                <p>{post.excerpt}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {page.totalPages > 1 && (
+          <nav class="pagination" aria-label="Pagination">
+            {page.hasPreviousPage && (
+              <a href={page.currentPage === 2 ? `${basePath}posts/` : `${basePath}posts/${page.currentPage - 1}/`}>
+                Previous
+              </a>
+            )}
+            {getPaginationPages(page.totalPages).map((pageNumber) => (
+              pageNumber === page.currentPage ? (
+                <span class="current-page" aria-current="page">{pageNumber}</span>
+              ) : (
+                <a href={pageNumber === 1 ? `${basePath}posts/` : `${basePath}posts/${pageNumber}/`}>
+                  {pageNumber}
+                </a>
+              )
+            ))}
+            {page.hasNextPage && (
+              <a href={`${basePath}posts/${page.currentPage + 1}/`}>Next</a>
+            )}
+          </nav>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <BlogChrome />
+</MainLayout>

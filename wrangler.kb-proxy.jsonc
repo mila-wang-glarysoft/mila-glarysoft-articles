@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "glarysoft-kb-proxy",
+  "main": "workers/kb-proxy.js",
+  "compatibility_date": "2026-06-15",
+  "routes": [
+    {
+      "pattern": "glarysoft.com/kb*",
+      "zone_name": "glarysoft.com"
+    },
+    {
+      "pattern": "www.glarysoft.com/kb*",
+      "zone_name": "glarysoft.com"
+    }
+  ],
+  "vars": {
+    "PAGES_ORIGIN": "https://glarysoft-kb.pages.dev"
+  }
+}

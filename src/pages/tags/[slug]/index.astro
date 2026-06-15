@@ -1,0 +1,73 @@
+---
+import BlogChrome from '../../../components/BlogChrome.astro';
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { getPaginationPages, getPostsByTag, paginate, tags } from '../../../data/posts.js';
+import '../../../styles/home.css';
+
+export function getStaticPaths() {
+  return tags.map((tag) => ({
+    params: { slug: tag.slug },
+    props: { tag },
+  }));
+}
+
+const { tag } = Astro.props;
+const page = paginate(getPostsByTag(tag.slug));
+const basePath = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<MainLayout
+  title={`${tag.name} | Glarysoft Knowledge Base`}
+  description={`Articles tagged ${tag.name} from the Glarysoft Knowledge Base.`}
+>
+  <main class="archive-page">
+    <section class="blog-hero archive-hero">
+      <div class="blog-container blog-hero-simple">
+        <nav class="blog-breadcrumb archive-breadcrumb" aria-label="Breadcrumb">
+          <a href="https://www.glarysoft.com/">Home</a>
+          <span>/</span>
+          <a href={basePath}>Knowledge Base</a>
+        </nav>
+        <h1>{tag.name}</h1>
+        <p class="blog-lead">Articles tagged {tag.name}.</p>
+      </div>
+    </section>
+
+    <section class="blog-section">
+      <div class="blog-container">
+        <div class="post-list simple-list category-article-grid">
+          {page.items.map((post) => (
+            <article class="post-row">
+              <div>
+                <p class="post-category">{post.category}</p>
+                <h3><a href={post.href}>{post.title}</a></h3>
+                <p>{post.excerpt}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {page.totalPages > 1 && (
+          <nav class="pagination" aria-label="Pagination">
+            {getPaginationPages(page.totalPages).map((pageNumber) => (
+              pageNumber === page.currentPage ? (
+                <span class="current-page" aria-current="page">{pageNumber}</span>
+              ) : (
+                <a href={pageNumber === 1 ? tag.href : `${tag.href}${pageNumber}/`}>
+                  {pageNumber}
+                </a>
+              )
+            ))}
+            {page.hasNextPage && (
+              <a href={`${tag.href}${page.currentPage + 1}/`}>Next</a>
+            )}
+          </nav>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <BlogChrome />
+</MainLayout>

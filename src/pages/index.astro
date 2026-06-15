@@ -1,57 +1,82 @@
 ---
 import BlogChrome from '../components/BlogChrome.astro';
 import MainLayout from '../layouts/MainLayout.astro';
-import { posts } from '../data/posts.js';
+import { topCategories } from '../data/posts.js';
 import '../styles/home.css';
 
-const featuredPost = posts[0];
+const basePath = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const productCategories = topCategories.filter((category) =>
+  ['glary-utilities', 'file-recovery', 'malware-hunter', 'software-update'].includes(category.slug)
+);
+const productIcons = {
+  'glary-utilities': `${basePath}images/kb/glary-utilities.png`,
+  'file-recovery': `${basePath}images/kb/file-recovery.png`,
+  'malware-hunter': `${basePath}images/kb/malware-hunter.png`,
+  'software-update': `${basePath}images/kb/software-update.png`,
+};
+const supportLinks = [
+  {
+    title: 'License Retrieval',
+    href: 'https://www.glarysoft.com/support/lost-license/',
+    icon: `${basePath}images/kb/license.png`,
+  },
+  {
+    title: 'Frequently Asked Questions',
+    href: `${basePath}faqs/`,
+    icon: `${basePath}images/kb/faq.png`,
+  },
+  {
+    title: 'Contact Support',
+    href: 'https://www.glarysoft.com/support/',
+    icon: `${basePath}images/kb/contact.png`,
+  },
+  {
+    title: 'Give Feedback',
+    href: 'https://www.glarysoft.com/support/online-feedback/',
+    icon: `${basePath}images/kb/feedback.png`,
+  },
+];
 ---
 
 <MainLayout
-  title="Glarysoft Blog"
-  description="Product news, updates, and practical tips from the Glarysoft team."
+  title="Glarysoft Knowledge Base"
+  description="Guides, product help, and support articles from Glarysoft."
 >
   <main class="blog-home">
-    <section class="blog-hero">
+    <section class="blog-hero kb-hero">
       <div class="blog-container blog-hero-simple">
-        <div>
-          <h1>Blog</h1>
-          <p class="blog-lead">
-            Follow the latest Glarysoft product updates, company announcements,
-            and short maintenance insights for everyday Windows users.
-          </p>
-        </div>
-
+        <h1>Knowledge Base</h1>
+        <p class="blog-lead">
+          Find help articles, product guides, and answers for Glarysoft software.
+        </p>
       </div>
     </section>
 
-    <section class="blog-section">
+    <section class="blog-section kb-home-section">
       <div class="blog-container">
-        <a class="featured-row" href={featuredPost.href}>
-          <img
-            src={featuredPost.featured_image}
-            alt={featuredPost.title}
-          />
-          <div>
-            <h2>{featuredPost.title}</h2>
-            <p>{featuredPost.excerpt}</p>
-          </div>
-        </a>
-
-        <div class="section-head compact-head archive-head">
-          <h2>Latest Posts</h2>
-          <a href="/posts/">View all posts</a>
+        <div class="support-actions">
+          {supportLinks.map((link) => (
+            <a href={link.href}>
+              <img src={link.icon} alt="" loading="lazy" />
+              <span>{link.title}</span>
+            </a>
+          ))}
         </div>
 
-        <div class="post-list simple-list">
-          {posts.map((post) => (
-            <article class="post-row">
-              <div>
-                <p class="post-category">{post.category}</p>
-                <h3><a href={post.href}>{post.title}</a></h3>
-                <p>{post.excerpt}</p>
-              </div>
-              <time datetime={post.date}>{post.dateLabel}</time>
+        <div class="section-head compact-head archive-head product-head">
+          <h2>Choose a product</h2>
+        </div>
+
+        <div class="product-grid">
+          {productCategories.map((category) => (
+            <article class="product-card">
+              <a class="product-card-main" href={category.href}>
+                <img src={productIcons[category.slug]} alt="" loading="lazy" />
+                <h3>{category.name}</h3>
+                <p>{category.description}</p>
+              </a>
             </article>
           ))}
         </div>

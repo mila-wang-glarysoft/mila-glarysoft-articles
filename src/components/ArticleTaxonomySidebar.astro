@@ -1,0 +1,41 @@
+---
+import { articleCategories } from '../data/articleCategories.js';
+import { categories } from '../data/posts.js';
+
+const { activeArticleSlug = '', activeCategorySlug = '', title = 'Articles' } = Astro.props;
+---
+
+<aside class="article-taxonomy-sidebar" aria-label="Article navigation">
+  <h2>{title}</h2>
+  <nav>
+    {articleCategories.map((articleCategory) => (
+      <div class="taxonomy-group">
+        <a
+          class:list={[
+            'taxonomy-parent',
+            { active: articleCategory.slug === activeArticleSlug },
+          ]}
+          href={articleCategory.href}
+          aria-current={articleCategory.slug === activeArticleSlug && !activeCategorySlug ? 'page' : undefined}
+        >
+          <span>{articleCategory.name}</span>
+        </a>
+
+        {articleCategory.slug === 'how-to' && categories.length > 0 && (
+          <div class="taxonomy-children">
+            {categories.map((category) => (
+              <a
+                class:list={[{ active: category.slug === activeCategorySlug }]}
+                href={category.href}
+                aria-current={category.slug === activeCategorySlug ? 'page' : undefined}
+              >
+                <span>{category.name}</span>
+                <small>{category.postCount}</small>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    ))}
+  </nav>
+</aside>

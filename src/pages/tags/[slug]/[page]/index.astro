@@ -26,8 +26,8 @@ const basePath = import.meta.env.BASE_URL.endsWith('/')
 ---
 
 <MainLayout
-  title={`${tag.name} - Page ${page.currentPage} | Glarysoft Knowledge Base`}
-  description={`Articles tagged ${tag.name} from the Glarysoft Knowledge Base.`}
+  title={`${tag.name} - Page ${page.currentPage} | Glarysoft Articles`}
+  description={`Articles tagged ${tag.name} from Glarysoft.`}
 >
   <main class="archive-page">
     <section class="blog-hero archive-hero">
@@ -35,7 +35,7 @@ const basePath = import.meta.env.BASE_URL.endsWith('/')
         <nav class="blog-breadcrumb archive-breadcrumb" aria-label="Breadcrumb">
           <a href="https://www.glarysoft.com/">Home</a>
           <span>/</span>
-          <a href={basePath}>Knowledge Base</a>
+          <a href={basePath}>Articles</a>
         </nav>
         <h1>{tag.name}</h1>
         <p class="blog-lead">Articles tagged {tag.name}.</p>
@@ -63,8 +63,10 @@ const basePath = import.meta.env.BASE_URL.endsWith('/')
                 Previous
               </a>
             )}
-            {getPaginationPages(page.totalPages).map((pageNumber) => (
-              pageNumber === page.currentPage ? (
+            {getPaginationPages(page.totalPages, page.currentPage).map((pageNumber) => (
+              pageNumber === 'ellipsis' ? (
+                <span class="pagination-ellipsis">...</span>
+              ) : pageNumber === page.currentPage ? (
                 <span class="current-page" aria-current="page">{pageNumber}</span>
               ) : (
                 <a href={pageNumber === 1 ? tag.href : `${tag.href}${pageNumber}/`}>

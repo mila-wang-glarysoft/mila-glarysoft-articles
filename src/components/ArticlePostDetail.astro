@@ -1,0 +1,111 @@
+---
+import ArticleTaxonomySidebar from './ArticleTaxonomySidebar.astro';
+import BlogChrome from './BlogChrome.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import {
+  getCategoryBySlug,
+  getRelatedPosts,
+  renderPostHtml,
+} from '../data/posts.js';
+import '../styles/home.css';
+
+const { post, collection } = Astro.props;
+const basePath = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const postHtml = renderPostHtml(post);
+const relatedPosts = getRelatedPosts(post.slug);
+const postCategory = post.collectionSlug === 'how-to'
+  ? getCategoryBySlug(post.categorySlug)
+  : null;
+const hasHeadings = post.headings.length > 0;
+---
+
+<MainLayout
+  title={`${post.title} | Glarysoft Articles`}
+  description={post.excerpt}
+>
+  <main class="post-page">
+    <div class="blog-container post-layout">
+      <article class="blog-post">
+        <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+          <a href="https://www.glarysoft.com/">Home</a>
+          <span>/</span>
+          <a href={`${basePath}articles/`}>Articles</a>
+          <span>/</span>
+          <a href={collection.href}>{collection.name}</a>
+          {postCategory && (
+            <>
+              <span>/</span>
+              <a href={post.categoryHref}>{postCategory.name}</a>
+            </>
+          )}
+        </nav>
+
+        <header class="blog-post-header">
+          <h1>{post.title}</h1>
+          {post.author && (
+            <p class="post-byline">
+              By <a href={post.authorHref}>{post.author}</a>
+              {post.dateLabel && <span> / {post.dateLabel}</span>}
+            </p>
+          )}
+          {!post.author && post.dateLabel && (
+            <p class="post-byline">{post.dateLabel}</p>
+          )}
+        </header>
+
+        {post.featured_image && (
+          <img
+            class="blog-hero-image"
+            src={post.featured_image}
+            alt={post.title}
+          />
+        )}
+
+        <div class="blog-content" set:html={postHtml} />
+      </article>
+
+      <aside class="post-aside">
+        {hasHeadings && (
+          <div class="toc">
+            <h2>In This Article</h2>
+            {post.headings.map((heading) => (
+              <a href={`#${heading.id}`}>{heading.text}</a>
+            ))}
+          </div>
+        )}
+
+        <ArticleTaxonomySidebar
+          activeArticleSlug={collection.slug}
+          activeCategorySlug={post.collectionSlug === 'how-to' ? post.categorySlug : ''}
+          title="Categories"
+        />
+
+        <div class="post-cta">
+          <h2>Try Glary Utilities</h2>
+          <p>Clean, optimize, and maintain your Windows PC with one utility.</p>
+          <a href="https://www.glarysoft.com/downloads/?p=gu-page">
+            Free Download
+          </a>
+        </div>
+      </aside>
+    </div>
+
+    <section class="related-posts">
+      <div class="blog-container">
+        <h2>Related Articles</h2>
+        <div class="related-grid">
+          {relatedPosts.map((relatedPost) => (
+            <a href={relatedPost.href} class="related-card">
+              <span>{relatedPost.category}</span>
+              <h3>{relatedPost.title}</h3>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <BlogChrome />
+</MainLayout>

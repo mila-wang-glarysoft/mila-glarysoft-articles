@@ -3,13 +3,13 @@ media:
   output: /uploads
 
 content:
-  - name: posts
-    label: Blog Posts
+  - name: how_to_clean_up_repair
+    label: How To / Clean Up & Repair
     type: collection
-    path: content/posts
+    path: content/how-to/clean-up-repair
     filename: '{fields.slug}.md'
     view:
-      fields: [title, category, date, draft]
+      fields: [title, category, author, date, draft]
       primary: title
       sort: [date, title]
       default:
@@ -31,11 +31,16 @@ content:
         label: Category
         type: select
         required: true
+        default: clean-up-repair
         options:
-          - Product Updates
-          - Company News
-          - Tips & Insights
-          - User Stories
+          - clean-up-repair
+          - optimize-improve
+          - privacy-security
+          - files-folders
+          - system-tools
+      - name: author
+        label: Author
+        type: string
       - name: date
         label: Publish Date
         type: date
@@ -43,7 +48,6 @@ content:
       - name: excerpt
         label: Excerpt
         type: text
-        required: true
       - name: featured_image
         label: Featured Image
         type: image
@@ -53,7 +57,347 @@ content:
       - name: draft
         label: Draft
         type: boolean
-        default: true
+        default: false
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: how_to_optimize_improve
+    label: How To / Optimize & Improve
+    type: collection
+    path: content/how-to/optimize-improve
+    filename: '{fields.slug}.md'
+    view:
+      fields: [title, category, author, date, draft]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: slug
+        label: Slug
+        type: string
+        required: true
+        pattern:
+          regex: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+          message: Use lowercase letters, numbers, and hyphens only.
+      - name: category
+        label: Category
+        type: select
+        required: true
+        default: optimize-improve
+        options:
+          - clean-up-repair
+          - optimize-improve
+          - privacy-security
+          - files-folders
+          - system-tools
+      - name: author
+        label: Author
+        type: string
+      - name: date
+        label: Publish Date
+        type: date
+        required: true
+      - name: excerpt
+        label: Excerpt
+        type: text
+      - name: featured_image
+        label: Featured Image
+        type: image
+      - name: reading_time
+        label: Reading Time
+        type: string
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: how_to_privacy_security
+    label: How To / Privacy & Security
+    type: collection
+    path: content/how-to/privacy-security
+    filename: '{fields.slug}.md'
+    view:
+      fields: [title, category, author, date, draft]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: slug
+        label: Slug
+        type: string
+        required: true
+        pattern:
+          regex: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+          message: Use lowercase letters, numbers, and hyphens only.
+      - name: category
+        label: Category
+        type: select
+        required: true
+        default: privacy-security
+        options:
+          - clean-up-repair
+          - optimize-improve
+          - privacy-security
+          - files-folders
+          - system-tools
+      - name: author
+        label: Author
+        type: string
+      - name: date
+        label: Publish Date
+        type: date
+        required: true
+      - name: excerpt
+        label: Excerpt
+        type: text
+      - name: featured_image
+        label: Featured Image
+        type: image
+      - name: reading_time
+        label: Reading Time
+        type: string
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: how_to_files_folders
+    label: How To / Files & Folders
+    type: collection
+    path: content/how-to/files-folders
+    filename: '{fields.slug}.md'
+    view:
+      fields: [title, category, author, date, draft]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: slug
+        label: Slug
+        type: string
+        required: true
+        pattern:
+          regex: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+          message: Use lowercase letters, numbers, and hyphens only.
+      - name: category
+        label: Category
+        type: select
+        required: true
+        default: files-folders
+        options:
+          - clean-up-repair
+          - optimize-improve
+          - privacy-security
+          - files-folders
+          - system-tools
+      - name: author
+        label: Author
+        type: string
+      - name: date
+        label: Publish Date
+        type: date
+        required: true
+      - name: excerpt
+        label: Excerpt
+        type: text
+      - name: featured_image
+        label: Featured Image
+        type: image
+      - name: reading_time
+        label: Reading Time
+        type: string
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: how_to_system_tools
+    label: How To / System Tools
+    type: collection
+    path: content/how-to/system-tools
+    filename: '{fields.slug}.md'
+    view:
+      fields: [title, category, author, date, draft]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: slug
+        label: Slug
+        type: string
+        required: true
+        pattern:
+          regex: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+          message: Use lowercase letters, numbers, and hyphens only.
+      - name: category
+        label: Category
+        type: select
+        required: true
+        default: system-tools
+        options:
+          - clean-up-repair
+          - optimize-improve
+          - privacy-security
+          - files-folders
+          - system-tools
+      - name: author
+        label: Author
+        type: string
+      - name: date
+        label: Publish Date
+        type: date
+        required: true
+      - name: excerpt
+        label: Excerpt
+        type: text
+      - name: featured_image
+        label: Featured Image
+        type: image
+      - name: reading_time
+        label: Reading Time
+        type: string
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: windows_tips
+    label: Windows Tips
+    type: collection
+    path: content/windows-tips
+    filename: '{fields.slug}.md'
+    view:
+      fields: [title, category, author, date, draft]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: slug
+        label: Slug
+        type: string
+        required: true
+        pattern:
+          regex: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+          message: Use lowercase letters, numbers, and hyphens only.
+      - name: category
+        label: Category
+        type: string
+        default: windows-tips
+      - name: author
+        label: Author
+        type: string
+      - name: date
+        label: Publish Date
+        type: date
+        required: true
+      - name: excerpt
+        label: Excerpt
+        type: text
+      - name: featured_image
+        label: Featured Image
+        type: image
+      - name: reading_time
+        label: Reading Time
+        type: string
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: hardware
+    label: Hardware
+    type: collection
+    path: content/hardware
+    filename: '{fields.slug}.md'
+    view:
+      fields: [title, category, author, date, draft]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: slug
+        label: Slug
+        type: string
+        required: true
+        pattern:
+          regex: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+          message: Use lowercase letters, numbers, and hyphens only.
+      - name: category
+        label: Category
+        type: string
+        default: hardware
+      - name: author
+        label: Author
+        type: string
+      - name: date
+        label: Publish Date
+        type: date
+        required: true
+      - name: excerpt
+        label: Excerpt
+        type: text
+      - name: featured_image
+        label: Featured Image
+        type: image
+      - name: reading_time
+        label: Reading Time
+        type: string
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
       - name: body
         label: Body
         type: rich-text

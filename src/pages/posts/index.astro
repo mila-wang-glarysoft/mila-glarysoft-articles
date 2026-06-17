@@ -11,7 +11,7 @@ const page = paginate(posts);
 ---
 
 <MainLayout
-  title="All Articles | Glarysoft Knowledge Base"
+  title="All Articles | Glarysoft Articles"
   description="Browse Glarysoft product guides, support notes, and troubleshooting articles."
 >
   <main class="archive-page">
@@ -20,7 +20,7 @@ const page = paginate(posts);
         <nav class="blog-breadcrumb archive-breadcrumb" aria-label="Breadcrumb">
           <a href="https://www.glarysoft.com/">Home</a>
           <span>/</span>
-          <a href={basePath}>Knowledge Base</a>
+          <a href={basePath}>Articles</a>
         </nav>
         <h1>All Articles</h1>
         <p class="blog-lead">
@@ -46,8 +46,10 @@ const page = paginate(posts);
 
         {page.totalPages > 1 && (
           <nav class="pagination" aria-label="Pagination">
-            {getPaginationPages(page.totalPages).map((pageNumber) => (
-              pageNumber === page.currentPage ? (
+            {getPaginationPages(page.totalPages, page.currentPage).map((pageNumber) => (
+              pageNumber === 'ellipsis' ? (
+                <span class="pagination-ellipsis">...</span>
+              ) : pageNumber === page.currentPage ? (
                 <span class="current-page" aria-current="page">{pageNumber}</span>
               ) : (
                 <a href={pageNumber === 1 ? `${basePath}posts/` : `${basePath}posts/${pageNumber}/`}>

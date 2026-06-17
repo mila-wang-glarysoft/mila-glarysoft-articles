@@ -1,0 +1,141 @@
+---
+import ArticleCategoryLanding from '../../../components/ArticleCategoryLanding.astro';
+import ArticlePostDetail from '../../../components/ArticlePostDetail.astro';
+import BlogChrome from '../../../components/BlogChrome.astro';
+import MainLayout from '../../../layouts/MainLayout.astro';
+import {
+  categories,
+  getCategoryChildren,
+  getPaginationPages,
+  getPostsByCategory,
+  pageSize,
+  paginate,
+} from '../../../data/posts.js';
+import {
+  getArticleCategoryBySlug,
+  getPostsByArticleCategory,
+} from '../../../data/articleCategories.js';
+import '../../../styles/home.css';
+
+export function getStaticPaths() {
+  const howToPosts = getPostsByArticleCategory('how-to');
+  const totalPages = Math.ceil(howToPosts.length / pageSize);
+  const pagePaths = Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => {
+    const pageNumber = index + 2;
+    return {
+      params: { slug: String(pageNumber) },
+      props: { type: 'collection-page', pageNumber },
+    };
+  });
+
+  const postPaths = howToPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { type: 'post', post },
+  }));
+
+  const categoryPaths = categories.map((category) => ({
+    params: { slug: category.slug },
+    props: { type: 'category', category, pageNumber: 1 },
+  }));
+
+  return [...pagePaths, ...postPaths, ...categoryPaths];
+}
+
+const { type, pageNumber, post, category } = Astro.props;
+const isPost = type === 'post';
+const isCategory = type === 'category';
+
+const howToCategory = getArticleCategoryBySlug('how-to');
+const collectionPage = type === 'collection-page'
+  ? paginate(getPostsByArticleCategory('how-to'), pageNumber)
+  : null;
+
+const categoryPosts = isCategory ? paginate(getPostsByCategory(category.slug), pageNumber) : null;
+const childCategories = isCategory ? getCategoryChildren(category.slug) : [];
+const basePath = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+{type === 'collection-page' ? (
+  <ArticleCategoryLanding category={howToCategory} page={collectionPage} />
+) : isPost ? (
+  <ArticlePostDetail post={post} collection={howToCategory} />
+) : (
+  <MainLayout
+    title={`${category.name} | Glarysoft Articles`}
+    description={category.description}
+  >
+    <main class="archive-page">
+      <section class="blog-hero archive-hero">
+        <div class="blog-container blog-hero-simple">
+          <nav class="blog-breadcrumb archive-breadcrumb" aria-label="Breadcrumb">
+            <a href="https://www.glarysoft.com/">Home</a>
+            <span>/</span>
+            <a href={`${basePath}articles/`}>Articles</a>
+            <span>/</span>
+            <a href={`${basePath}how-to/`}>How To</a>
+          </nav>
+          <h1>{category.name}</h1>
+          <p class="blog-lead">{category.description}</p>
+        </div>
+      </section>
+
+      <section class="blog-section">
+        <div class="blog-container">
+          {childCategories.length > 0 && (
+            <div class="child-category-panel">
+              <div class="child-category-grid">
+                {childCategories.map((child) => (
+                  <a href={child.href}>
+                    <span>{child.name}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div class="post-list simple-list category-article-grid">
+            {categoryPosts.items.map((post) => (
+              <article class="post-row">
+                <div>
+                  <p class="post-category">{post.category}</p>
+                  <h3><a href={post.href}>{post.title}</a></h3>
+                  <p>{post.excerpt}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {categoryPosts.totalPages > 1 && (
+            <nav class="pagination" aria-label="Pagination">
+              {categoryPosts.hasPreviousPage && (
+                <a href={categoryPosts.currentPage === 2 ? category.href : `${category.href}${categoryPosts.currentPage - 1}/`}>
+                  Previous
+                </a>
+              )}
+              {getPaginationPages(categoryPosts.totalPages, categoryPosts.currentPage).map((pageNumber) => (
+                pageNumber === 'ellipsis' ? (
+                  <span class="pagination-ellipsis">...</span>
+                ) : pageNumber === categoryPosts.currentPage ? (
+                  <span class="current-page" aria-current="page">{pageNumber}</span>
+                ) : (
+                  <a href={pageNumber === 1 ? category.href : `${category.href}${pageNumber}/`}>
+                    {pageNumber}
+                  </a>
+                )
+              ))}
+              {categoryPosts.hasNextPage && (
+                <a href={`${category.href}${categoryPosts.currentPage + 1}/`}>
+                  Next
+                </a>
+              )}
+            </nav>
+          )}
+        </div>
+      </section>
+    </main>
+
+    <BlogChrome />
+  </MainLayout>
+)}

@@ -1,46 +1,42 @@
-# Astro Starter Kit: Basics
+# Glarysoft How-To Articles
+
+Astro content library for Glarysoft articles, product guides, troubleshooting
+notes, and guest post submissions.
+
+## Local Development
 
 ```sh
-npm create astro@latest -- --template basics
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The site is built with `base: '/articles'`, so production URLs resolve under
+`https://www.glarysoft.com/articles/`.
 
-## 🚀 Project Structure
+## Build
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```sh
+npm run build
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+The production output is written to `dist/`.
 
-## 🧞 Commands
+## Cloudflare Deploy
 
-All commands are run from the root of the project, from a terminal:
+Deploy the Pages site:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```sh
+npx wrangler pages deploy dist --project-name glarysoft-howto
+```
 
-## 👀 Want to learn more?
+Deploy the proxy Worker for the public Glarysoft routes:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```sh
+npx wrangler deploy --config wrangler.articles-proxy.jsonc
+```
+
+## Guest Posts
+
+The guest post page lives at `/articles/guest-post/`. It opens a prefilled
+email submission to Glarysoft support, which keeps the static Pages deployment
+simple while still giving users a clear submission path.

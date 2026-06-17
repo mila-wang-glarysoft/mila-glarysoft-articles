@@ -1,0 +1,38 @@
+---
+import ArticleCategoryLanding from '../../../components/ArticleCategoryLanding.astro';
+import ArticlePostDetail from '../../../components/ArticlePostDetail.astro';
+import {
+  getArticleCategoryBySlug,
+  getPostsByArticleCategory,
+} from '../../../data/articleCategories.js';
+import { pageSize, paginate } from '../../../data/posts.js';
+
+export function getStaticPaths() {
+  const posts = getPostsByArticleCategory('hardware');
+  const totalPages = Math.ceil(posts.length / pageSize);
+  const pagePaths = Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => {
+    const pageNumber = index + 2;
+    return {
+      params: { page: String(pageNumber) },
+      props: { type: 'collection-page', pageNumber },
+    };
+  });
+
+  const postPaths = posts.map((post) => ({
+    params: { page: post.slug },
+    props: { type: 'post', post },
+  }));
+
+  return [...pagePaths, ...postPaths];
+}
+
+const { type, pageNumber, post } = Astro.props;
+const category = getArticleCategoryBySlug('hardware');
+const page = paginate(getPostsByArticleCategory('hardware'), pageNumber);
+---
+
+{type === 'post' ? (
+  <ArticlePostDetail post={post} collection={category} />
+) : (
+  <ArticleCategoryLanding category={category} page={page} />
+)}

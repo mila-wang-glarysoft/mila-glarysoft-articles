@@ -1,0 +1,75 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "glarysoft-articles-proxy",
+  "main": "workers/articles-proxy.js",
+  "compatibility_date": "2026-06-15",
+  "vars": {
+    "PAGES_ORIGIN": "https://glarysoft-articles.pages.dev"
+  },
+  "routes": [
+    {
+      "pattern": "glarysoft.com/articles*",
+      "zone_name": "glarysoft.com"
+    },
+    {
+      "pattern": "www.glarysoft.com/articles*",
+      "zone_name": "glarysoft.com"
+    },
+    {
+      "pattern": "glarysoft.com/windows-tips*",
+      "zone_name": "glarysoft.com"
+    },
+    {
+      "pattern": "www.glarysoft.com/windows-tips*",
+      "zone_name": "glarysoft.com"
+    },
+    {
+      "pattern": "glarysoft.com/how-to*",
+      "zone_name": "glarysoft.com"
+    },
+    {
+      "pattern": "www.glarysoft.com/how-to*",
+      "zone_name": "glarysoft.com"
+    },
+    {
+      "pattern": "glarysoft.com/hardware*",
+      "zone_name": "glarysoft.com"
+    },
+    {
+      "pattern": "www.glarysoft.com/hardware*",
+      "zone_name": "glarysoft.com"
+    },
+    {
+      "pattern": "glarysoft.com/_astro*",
+      "zone_name": "glarysoft.com"
+    },
+    {
+      "pattern": "www.glarysoft.com/_astro*",
+      "zone_name": "glarysoft.com"
+    },
+    {
+      "pattern": "glarysoft.com/js*",
+      "zone_name": "glarysoft.com"
+    },
+    {
+      "pattern": "www.glarysoft.com/js*",
+      "zone_name": "glarysoft.com"
+    },
+    {
+      "pattern": "glarysoft.com/favicon.ico",
+      "zone_name": "glarysoft.com"
+    },
+    {
+      "pattern": "www.glarysoft.com/favicon.ico",
+      "zone_name": "glarysoft.com"
+    },
+    {
+      "pattern": "glarysoft.com/favicon.svg",
+      "zone_name": "glarysoft.com"
+    },
+    {
+      "pattern": "www.glarysoft.com/favicon.svg",
+      "zone_name": "glarysoft.com"
+    }
+  ]
+}

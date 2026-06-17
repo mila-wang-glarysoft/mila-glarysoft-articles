@@ -1,88 +1,74 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import yaml from 'js-yaml';
+import { marked } from 'marked';
+
 const categoryDefinitions = {
-  'glary-utilities': {
-    name: 'Glary Utilities',
-    description: 'Guides for Glary Utilities and its built-in modules.',
+  'clean-up-repair': {
+    name: 'Clean Up & Repair',
+    description: 'Windows cleanup, repair, and maintenance tutorials.',
     order: 10,
-  },
-  introduction: {
-    name: 'Introduction',
-    description: 'Getting started with Glary Utilities.',
-    parentSlug: 'glary-utilities',
-    order: 11,
-  },
-  'global-modules': {
-    name: 'Global Modules',
-    description: 'Shared Glary Utilities features and global tools.',
-    parentSlug: 'glary-utilities',
-    order: 12,
   },
   'cleanup-repair': {
     name: 'Clean Up & Repair',
-    description: 'Cleanup, repair, and maintenance modules in Glary Utilities.',
-    parentSlug: 'glary-utilities',
-    order: 13,
+    description: 'Windows cleanup, repair, and maintenance tutorials.',
+    order: 11,
   },
   'optimize-improve': {
     name: 'Optimize & Improve',
-    description: 'Performance and optimization modules in Glary Utilities.',
-    parentSlug: 'glary-utilities',
-    order: 14,
+    description: 'Windows performance, startup, and optimization tutorials.',
+    order: 20,
   },
   'privacy-security': {
     name: 'Privacy & Security',
-    description: 'Privacy and security modules in Glary Utilities.',
-    parentSlug: 'glary-utilities',
-    order: 15,
+    description: 'Windows privacy, security, and protection tutorials.',
+    order: 30,
   },
   'files-folders': {
     name: 'Files & Folders',
-    description: 'File and folder tools in Glary Utilities.',
-    parentSlug: 'glary-utilities',
-    order: 16,
+    description: 'File management, backup, recovery, and organization tutorials.',
+    order: 40,
   },
   'system-tools': {
     name: 'System Tools',
-    description: 'System management tools in Glary Utilities.',
-    parentSlug: 'glary-utilities',
-    order: 17,
-  },
-  'file-recovery': {
-    name: 'File Recovery',
-    description: 'Guides for Glarysoft File Recovery.',
-    order: 20,
-  },
-  'malware-hunter': {
-    name: 'Malware Hunter',
-    description: 'Guides for Glarysoft Malware Hunter.',
-    order: 30,
-  },
-  'software-update': {
-    name: 'Software Update',
-    description: 'Guides for Glarysoft Software Update.',
-    order: 40,
-  },
-  support: {
-    name: 'Support',
-    description: 'License, account, and support articles.',
     order: 50,
-  },
-  'knowledge-base': {
-    name: 'Knowledge Base',
-    description: 'Glarysoft Knowledge Base articles.',
-    order: 100,
+    description: 'Windows tools, diagnostics, monitoring, and configuration tutorials.',
   },
 };
 
-const basePath = import.meta.env.BASE_URL.endsWith('/')
-  ? import.meta.env.BASE_URL
-  : `${import.meta.env.BASE_URL}/`;
+const baseUrl = import.meta.env?.BASE_URL || '/';
+const basePath = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+const articleCollectionSlug = 'how-to';
+const articleCollectionDefinitions = {
+  'how-to': 'How To',
+  'windows-tips': 'Windows Tips',
+  hardware: 'Hardware',
+};
 
-const postModules = import.meta.glob('../../content/posts/*.md', { eager: true });
-const rawPostModules = import.meta.glob('../../content/posts/*.md', {
-  eager: true,
-  query: '?raw',
-  import: 'default',
-});
+const contentRoot = path.resolve(process.cwd(), 'content');
+const contentPostRoots = ['how-to', 'windows-tips', 'hardware', 'posts'];
+
+function readMarkdownFiles(dir) {
+  if (!fs.existsSync(dir)) return [];
+
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const entryPath = path.join(dir, entry.name);
+
+    if (entry.isDirectory()) return readMarkdownFiles(entryPath);
+    if (!entry.isFile() || !entry.name.endsWith('.md')) return [];
+
+    const relativePath = path
+      .relative(process.cwd(), entryPath)
+      .split(path.sep)
+      .join('/');
+
+    return [[`../../${relativePath}`, fs.readFileSync(entryPath, 'utf8')]];
+  });
+}
+
+const rawPostModules = Object.fromEntries(
+  contentPostRoots.flatMap((root) => readMarkdownFiles(path.join(contentRoot, root)))
+);
 
 const monthLabels = [
   'Jan.',
@@ -99,7 +85,7 @@ const monthLabels = [
   'Dec.',
 ];
 
-export const pageSize = 12;
+export const pageSize = 72;
 
 function slugify(value) {
   return value
@@ -127,17 +113,24 @@ function withBase(path = '') {
 function getCategoryHref(slug) {
   const definition = getCategoryDefinition(slug);
   return definition.parentSlug
-    ? withBase(`${definition.parentSlug}/${slug}/`)
-    : withBase(`${slug}/`);
+    ? withBase(`${articleCollectionSlug}/${definition.parentSlug}/${slug}/`)
+    : withBase(`${articleCollectionSlug}/${slug}/`);
 }
 
 function formatDate(value) {
+  if (!value) return '';
   const date = new Date(`${value}T00:00:00`);
   return `${monthLabels[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }
 
 function getRawBody(raw) {
   return raw.replace(/^---[\s\S]*?---\s*/, '');
+}
+
+function getFrontmatter(raw) {
+  const match = raw.match(/^---\s*([\s\S]*?)\s*---/);
+  if (!match) return {};
+  return yaml.load(match[1]) || {};
 }
 
 function getStrongHeadingText(line) {
@@ -203,7 +196,7 @@ function getPrimaryCategory(frontmatter) {
 function getCategoryDefinition(slug) {
   return categoryDefinitions[slug] || {
     name: titleize(slug),
-    description: `${titleize(slug)} articles from the Glarysoft Knowledge Base.`,
+    description: `${titleize(slug)} articles from Glarysoft.`,
     order: 1000,
   };
 }
@@ -223,6 +216,12 @@ function getSlugFromPath(path) {
   return path.split('/').pop().replace(/\.md$/, '');
 }
 
+function getCollectionSlugFromPath(sourcePath) {
+  const match = sourcePath.match(/content\/([^/]+)\//);
+  const sourceCollection = match?.[1] || articleCollectionSlug;
+  return articleCollectionDefinitions[sourceCollection] ? sourceCollection : articleCollectionSlug;
+}
+
 function getExcerpt(raw, frontmatter) {
   if (frontmatter.excerpt) return frontmatter.excerpt;
 
@@ -235,29 +234,60 @@ function getExcerpt(raw, frontmatter) {
     .slice(0, 180);
 }
 
-export const posts = Object.entries(postModules)
-  .map(([path, module]) => {
-    const raw = rawPostModules[path];
-    const slug = module.frontmatter.slug || getSlugFromPath(path);
-    const categorySlug = getPrimaryCategory(module.frontmatter);
+function getAuthor(frontmatter) {
+  const author = frontmatter.author || frontmatter.authors || '';
+  if (Array.isArray(author)) return author[0] || '';
+  return author;
+}
+
+marked.use({
+  renderer: {
+    heading({ tokens, depth }) {
+      const text = this.parser.parseInline(tokens);
+      const rawText = tokens
+        .map((token) => token.raw || token.text || '')
+        .join('');
+
+      return `<h${depth} id="${slugify(decodeEntities(rawText))}">${text}</h${depth}>\n`;
+    },
+  },
+});
+
+export function renderPostHtml(post) {
+  return marked.parse(post.body || '');
+}
+
+export const posts = Object.entries(rawPostModules)
+  .map(([path, raw]) => {
+    const frontmatter = getFrontmatter(raw);
+    const slug = frontmatter.slug || getSlugFromPath(path);
+    const collectionSlug = getCollectionSlugFromPath(path);
+    const categorySlug = getPrimaryCategory(frontmatter);
     const categoryInfo = getCategoryDefinition(categorySlug);
+    const author = decodeEntities(getAuthor(frontmatter));
+    const authorSlug = author ? slugify(author) : '';
 
     return {
-      ...module.frontmatter,
+      ...frontmatter,
       slug,
-      title: decodeEntities(module.frontmatter.title),
+      title: decodeEntities(frontmatter.title),
       category: categoryInfo.name,
-      tags: normalizeList(module.frontmatter.tags).map(decodeEntities),
-      Content: module.default,
+      collectionSlug,
+      collectionName: articleCollectionDefinitions[collectionSlug],
+      author,
+      authorSlug,
+      authorHref: authorSlug ? withBase(`${collectionSlug}/author/${authorSlug}/`) : '',
+      tags: normalizeList(frontmatter.tags).map(decodeEntities),
       body: getRawBody(raw),
-      excerpt: getExcerpt(raw, module.frontmatter),
+      excerpt: getExcerpt(raw, frontmatter),
       headings: getHeadings(raw),
-      href: withBase(`${slug}/`),
+      href: withBase(`${collectionSlug}/${slug}/`),
+      sourcePath: path,
       categorySlug,
       categoryHref: getCategoryHref(categorySlug),
-      dateLabel: formatDate(module.frontmatter.date),
+      dateLabel: formatDate(frontmatter.date),
       featured_image: normalizeImagePath(
-        module.frontmatter.featured_image || module.frontmatter.coverImage
+        frontmatter.featured_image || frontmatter.coverImage
       ),
     };
   })
@@ -303,16 +333,19 @@ function getPostsByCategorySlug(slug) {
     .map(([childSlug]) => childSlug);
 
   return posts.filter(
-    (post) => post.categorySlug === slug || childSlugs.includes(post.categorySlug)
+    (post) =>
+      post.collectionSlug === articleCollectionSlug &&
+      (post.categorySlug === slug || childSlugs.includes(post.categorySlug))
   );
 }
 
 export function getPostsByCategory(category) {
   return posts.filter(
     (post) =>
-      post.category === category ||
-      post.categorySlug === category ||
-      getCategoryDefinition(post.categorySlug).parentSlug === category
+      post.collectionSlug === articleCollectionSlug &&
+      (post.category === category ||
+        post.categorySlug === category ||
+        getCategoryDefinition(post.categorySlug).parentSlug === category)
   );
 }
 
@@ -321,7 +354,15 @@ export function getCategoryBySlug(slug) {
 }
 
 export function getRelatedPosts(currentSlug, limit = 3) {
-  return posts.filter((post) => post.slug !== currentSlug).slice(0, limit);
+  const currentPost = posts.find((post) => post.slug === currentSlug);
+
+  return posts
+    .filter(
+      (post) =>
+        post.slug !== currentSlug &&
+        (!currentPost || post.collectionSlug === currentPost.collectionSlug)
+    )
+    .slice(0, limit);
 }
 
 export const tags = Array.from(
@@ -349,6 +390,30 @@ export function getPostsByTag(slug) {
   return posts.filter((post) => post.tags.some((tag) => slugifyTag(tag) === slug));
 }
 
+export const authors = Array.from(
+  posts
+    .filter((post) => post.author && post.authorSlug)
+    .reduce((authorMap, post) => {
+      const existing = authorMap.get(post.authorSlug);
+      authorMap.set(post.authorSlug, {
+        name: existing?.name || post.author,
+        slug: post.authorSlug,
+        href: post.authorHref,
+        postCount: (existing?.postCount || 0) + 1,
+      });
+      return authorMap;
+    }, new Map())
+    .values()
+).sort((a, b) => a.name.localeCompare(b.name));
+
+export function getAuthorBySlug(slug) {
+  return authors.find((author) => author.slug === slug);
+}
+
+export function getPostsByAuthor(slug) {
+  return posts.filter((post) => post.authorSlug === slug);
+}
+
 export function paginate(items, currentPage = 1, size = pageSize) {
   const totalPages = Math.max(1, Math.ceil(items.length / size));
   const page = Math.min(Math.max(currentPage, 1), totalPages);
@@ -363,6 +428,20 @@ export function paginate(items, currentPage = 1, size = pageSize) {
   };
 }
 
-export function getPaginationPages(totalPages) {
-  return Array.from({ length: totalPages }, (_, index) => index + 1);
+export function getPaginationPages(totalPages, currentPage = 1) {
+  if (totalPages <= 9) {
+    return Array.from({ length: totalPages }, (_, index) => index + 1);
+  }
+
+  const pages = new Set([1, totalPages]);
+  for (let page = currentPage - 2; page <= currentPage + 2; page += 1) {
+    if (page > 1 && page < totalPages) pages.add(page);
+  }
+
+  const sortedPages = Array.from(pages).sort((a, b) => a - b);
+  return sortedPages.flatMap((page, index) => {
+    const previous = sortedPages[index - 1];
+    if (previous && page - previous > 1) return ['ellipsis', page];
+    return [page];
+  });
 }

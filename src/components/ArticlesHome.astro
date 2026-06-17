@@ -1,0 +1,70 @@
+---
+import BlogChrome from './BlogChrome.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import { articleCategories } from '../data/articleCategories.js';
+import { posts } from '../data/posts.js';
+import '../styles/home.css';
+
+const basePath = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const latestPosts = posts.slice(0, 18);
+---
+
+<MainLayout
+  title="Glarysoft Articles"
+  description="How-to articles, product guides, and practical Windows tips from Glarysoft."
+>
+  <main class="blog-home">
+    <section class="blog-hero articles-hero">
+      <div class="blog-container blog-hero-simple">
+        <h1>Glarysoft Articles</h1>
+        <p class="blog-lead">
+          Explore Windows tips, step-by-step how-to guides, and hardware advice
+          for keeping your PC clean, stable, and fast.
+        </p>
+        <div class="hero-actions">
+          <a href={`${basePath}how-to/`}>Browse Articles</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-section articles-home-section">
+      <div class="blog-container">
+        <div class="section-head compact-head archive-head product-head">
+          <h2>Explore by topic</h2>
+        </div>
+
+        <div class="article-topic-grid">
+          {articleCategories.map((category) => (
+            <article class="article-topic-card">
+              <a href={category.href}>
+                <h3>{category.name}</h3>
+                <p>{category.description}</p>
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <div class="section-head compact-head archive-head latest-head">
+          <h2>Latest Articles</h2>
+          <a href={`${basePath}how-to/`}>View all</a>
+        </div>
+
+        <div class="post-list simple-list category-article-grid latest-article-grid">
+          {latestPosts.map((post) => (
+            <article class="post-row">
+              <div>
+                <p class="post-category">{post.category}</p>
+                <h3><a href={post.href}>{post.title}</a></h3>
+                <p>{post.excerpt}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <BlogChrome />
+</MainLayout>

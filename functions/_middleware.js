@@ -1,4 +1,4 @@
-const BLOCKED_HOSTS = new Set(['glarysoft-blog.pages.dev']);
+const BLOCKED_HOSTS = new Set(['glarysoft-howto.pages.dev']);
 
 export async function onRequest(context) {
   const url = new URL(context.request.url);

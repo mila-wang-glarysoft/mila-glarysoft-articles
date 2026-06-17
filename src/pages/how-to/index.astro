@@ -1,0 +1,13 @@
+---
+import ArticleCategoryLanding from '../../components/ArticleCategoryLanding.astro';
+import {
+  getArticleCategoryBySlug,
+  getPostsByArticleCategory,
+} from '../../data/articleCategories.js';
+import { paginate } from '../../data/posts.js';
+
+const category = getArticleCategoryBySlug('how-to');
+const page = paginate(getPostsByArticleCategory('how-to'));
+---
+
+<ArticleCategoryLanding category={category} page={page} />

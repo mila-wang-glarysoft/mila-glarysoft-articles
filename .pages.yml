@@ -1,6 +1,6 @@
 media:
   input: public/uploads
-  output: /uploads
+  output: /articles/uploads
 
 content:
   - name: how_to
@@ -32,15 +32,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [clean-up-repair]
+                required: true
+                default: clean-up-repair
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -80,15 +75,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [clean-up-repair]
+                required: true
+                default: clean-up-repair
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -128,15 +118,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [clean-up-repair]
+                required: true
+                default: clean-up-repair
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -176,15 +161,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [clean-up-repair]
+                required: true
+                default: clean-up-repair
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -224,15 +204,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [clean-up-repair]
+                required: true
+                default: clean-up-repair
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -272,15 +247,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [clean-up-repair]
+                required: true
+                default: clean-up-repair
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -320,15 +290,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [clean-up-repair]
+                required: true
+                default: clean-up-repair
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -368,15 +333,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [clean-up-repair]
+                required: true
+                default: clean-up-repair
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -416,15 +376,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [clean-up-repair]
+                required: true
+                default: clean-up-repair
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -464,15 +419,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [clean-up-repair]
+                required: true
+                default: clean-up-repair
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -512,15 +462,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [clean-up-repair]
+                required: true
+                default: clean-up-repair
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -560,15 +505,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [clean-up-repair]
+                required: true
+                default: clean-up-repair
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -608,15 +548,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [clean-up-repair]
+                required: true
+                default: clean-up-repair
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -656,15 +591,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [clean-up-repair]
+                required: true
+                default: clean-up-repair
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -704,15 +634,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [clean-up-repair]
+                required: true
+                default: clean-up-repair
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -752,15 +677,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [clean-up-repair]
+                required: true
+                default: clean-up-repair
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -804,15 +724,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -852,15 +767,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -900,15 +810,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -948,15 +853,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -996,15 +896,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1044,15 +939,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1092,15 +982,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1140,15 +1025,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1188,15 +1068,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1236,15 +1111,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1284,15 +1154,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1332,15 +1197,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1380,15 +1240,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1428,15 +1283,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1476,15 +1326,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1524,15 +1369,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1572,15 +1412,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [optimize-improve]
+                required: true
+                default: optimize-improve
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1624,15 +1459,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [privacy-security]
+                required: true
+                default: privacy-security
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1672,15 +1502,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [privacy-security]
+                required: true
+                default: privacy-security
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1720,15 +1545,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [privacy-security]
+                required: true
+                default: privacy-security
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1768,15 +1588,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [privacy-security]
+                required: true
+                default: privacy-security
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1816,15 +1631,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [privacy-security]
+                required: true
+                default: privacy-security
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1864,15 +1674,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [privacy-security]
+                required: true
+                default: privacy-security
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1912,15 +1717,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [privacy-security]
+                required: true
+                default: privacy-security
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1960,15 +1760,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [privacy-security]
+                required: true
+                default: privacy-security
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -2008,15 +1803,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [privacy-security]
+                required: true
+                default: privacy-security
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -2056,15 +1846,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [privacy-security]
+                required: true
+                default: privacy-security
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -2104,15 +1889,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [privacy-security]
+                required: true
+                default: privacy-security
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -2152,15 +1932,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [privacy-security]
+                required: true
+                default: privacy-security
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -2200,15 +1975,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [privacy-security]
+                required: true
+                default: privacy-security
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -2248,15 +2018,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [privacy-security]
+                required: true
+                default: privacy-security
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -2296,15 +2061,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [privacy-security]
+                required: true
+                default: privacy-security
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -2348,15 +2108,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [files-folders]
+                required: true
+                default: files-folders
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2396,15 +2151,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [files-folders]
+                required: true
+                default: files-folders
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2444,15 +2194,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [files-folders]
+                required: true
+                default: files-folders
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2492,15 +2237,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [files-folders]
+                required: true
+                default: files-folders
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2540,15 +2280,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [files-folders]
+                required: true
+                default: files-folders
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2588,15 +2323,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [files-folders]
+                required: true
+                default: files-folders
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2636,15 +2366,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [files-folders]
+                required: true
+                default: files-folders
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2684,15 +2409,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [files-folders]
+                required: true
+                default: files-folders
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2732,15 +2452,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [files-folders]
+                required: true
+                default: files-folders
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2780,15 +2495,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [files-folders]
+                required: true
+                default: files-folders
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2828,15 +2538,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [files-folders]
+                required: true
+                default: files-folders
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2876,15 +2581,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [files-folders]
+                required: true
+                default: files-folders
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2924,15 +2624,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [files-folders]
+                required: true
+                default: files-folders
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2972,15 +2667,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [files-folders]
+                required: true
+                default: files-folders
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - files-folders
               - name: author
                 label: Author
                 type: string
@@ -3020,15 +2710,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [files-folders]
+                required: true
+                default: files-folders
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - files-folders
               - name: author
                 label: Author
                 type: string
@@ -3068,15 +2753,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [files-folders]
+                required: true
+                default: files-folders
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - files-folders
               - name: author
                 label: Author
                 type: string
@@ -3120,15 +2800,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [system-tools]
+                required: true
+                default: system-tools
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3168,15 +2843,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [system-tools]
+                required: true
+                default: system-tools
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3216,15 +2886,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [system-tools]
+                required: true
+                default: system-tools
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3264,15 +2929,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [system-tools]
+                required: true
+                default: system-tools
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3312,15 +2972,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [system-tools]
+                required: true
+                default: system-tools
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3360,15 +3015,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [system-tools]
+                required: true
+                default: system-tools
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3408,15 +3058,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [system-tools]
+                required: true
+                default: system-tools
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3456,15 +3101,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [system-tools]
+                required: true
+                default: system-tools
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3504,15 +3144,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [system-tools]
+                required: true
+                default: system-tools
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3552,15 +3187,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [system-tools]
+                required: true
+                default: system-tools
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3600,15 +3230,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [system-tools]
+                required: true
+                default: system-tools
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3648,15 +3273,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [system-tools]
+                required: true
+                default: system-tools
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3696,15 +3316,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [system-tools]
+                required: true
+                default: system-tools
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3744,15 +3359,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [system-tools]
+                required: true
+                default: system-tools
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3792,15 +3402,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [system-tools]
+                required: true
+                default: system-tools
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3840,15 +3445,10 @@ content:
               - name: categories
                 label: Categories
                 type: select
-                list: true
-                readonly: true
-                default: [system-tools]
+                required: true
+                default: system-tools
                 options:
-                    - clean-up-repair
-                    - optimize-improve
-                    - privacy-security
-                    - files-folders
-                    - system-tools
+                  - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3888,9 +3488,8 @@ content:
       - name: categories
         label: Categories
         type: select
-        list: true
-        readonly: true
-        default: [windows-tips]
+        required: true
+        default: windows-tips
         options:
           - windows-tips
       - name: author
@@ -3932,9 +3531,8 @@ content:
       - name: categories
         label: Categories
         type: select
-        list: true
-        readonly: true
-        default: [hardware]
+        required: true
+        default: hardware
         options:
           - hardware
       - name: author

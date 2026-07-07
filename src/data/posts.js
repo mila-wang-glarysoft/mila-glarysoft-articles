@@ -153,6 +153,17 @@ function getStrongHeadingText(line) {
   return text;
 }
 
+function stripInlineMarkdown(value = '') {
+  return decodeEntities(value)
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/[*_~`]+/g, '')
+    .replace(/<[^>]+>/g, '')
+    .replace(/\\\./g, '.')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function getHeadings(raw) {
   const headings = [];
 
@@ -166,9 +177,12 @@ function getHeadings(raw) {
 
       if (!text) return;
 
+      const cleanText = stripInlineMarkdown(text);
+      if (!cleanText) return;
+
       headings.push({
-        id: slugify(text),
-        text: decodeEntities(text.replace(/\\\./g, '.')),
+        id: slugify(cleanText),
+        text: cleanText,
       });
     });
 
@@ -220,6 +234,7 @@ function normalizeList(value) {
 
 function normalizeImagePath(value) {
   if (!value) return '';
+  if (value.startsWith('/uploads/')) return withBase(`articles${value}`);
   if (/^(https?:)?\/\//.test(value) || value.startsWith('/')) return value;
   return withBase(value);
 }
@@ -260,7 +275,13 @@ marked.use({
         .map((token) => token.raw || token.text || '')
         .join('');
 
-      return `<h${depth} id="${slugify(decodeEntities(rawText))}">${text}</h${depth}>\n`;
+      return `<h${depth} id="${slugify(stripInlineMarkdown(rawText))}">${text}</h${depth}>\n`;
+    },
+    image({ href, title, text }) {
+      const src = normalizeImagePath(href);
+      const titleAttr = title ? ` title="${escapeHtml(title)}"` : '';
+
+      return `<img src="${escapeHtml(src)}" alt="${escapeHtml(text || '')}"${titleAttr}>`;
     },
   },
 });
@@ -276,11 +297,11 @@ function escapeHtml(value = '') {
 
 function parseShortcodeAttributes(value = '') {
   const attributes = {};
-  const attributePattern = /([A-Za-z][\w-]*)\s*=\s*(?:"([^"]*)"|'([^']*)')/g;
+  const attributePattern = /([A-Za-z][\w-]*)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s]+))/g;
   let match;
 
   while ((match = attributePattern.exec(value)) !== null) {
-    attributes[match[1]] = match[2] ?? match[3] ?? '';
+    attributes[match[1]] = match[2] ?? match[3] ?? match[4] ?? '';
   }
 
   return attributes;
@@ -309,7 +330,9 @@ export function renderNofollowLinks(markdown = '') {
 }
 
 export function renderPostHtml(post) {
-  return marked.parse(renderNofollowLinks(post.body || ''));
+  return marked
+    .parse(renderNofollowLinks(post.body || ''))
+    .replace(/src="\/uploads\//g, `src="${withBase('articles/uploads/')}`);
 }
 
 export const posts = Object.entries(rawPostModules)

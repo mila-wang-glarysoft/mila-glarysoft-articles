@@ -640,6 +640,14 @@
   margin: 0 0 10px;
 }
 
+.post-page .blog-content ul li {
+  list-style-type: disc !important;
+}
+
+.post-page .blog-content ol li {
+  list-style-type: decimal !important;
+}
+
 .post-page .blog-content li::marker {
   color: #333333;
   font-size: 1em;

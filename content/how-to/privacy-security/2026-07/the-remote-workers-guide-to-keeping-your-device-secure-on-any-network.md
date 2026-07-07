@@ -1,9 +1,11 @@
 ---
 title: The Remote Worker's Guide to Keeping Your Device Secure on Any Network
+categories: privacy-security
 author: Rebecca
 date: 2026-07-07
 featured_image: /uploads/pexels-mikhail-nilov-8937543.jpg
 draft: false
+nofollow_links: true
 ---
 Working at a cafe, then working at home at night, then a hotel the following week. Each switch is a little risky. Until there's a problem, most remote workers don't give it a second thought.
 
@@ -27,7 +29,7 @@ Without the right tools behind good habits, then good habits are only as effecti
 - A real firewall, not one that you install and forget about.
 - A VPN that is capable of encrypting your connection on any network you are connected to.
 
-Also, if you have a choice, choose secure alternatives. For example, you can communicate via Discord or Talk via a secure video connection. A more privacy-friendly option is ::nofollow-link{url="[https://callmechat.com/1-on-1-chat](https://callmechat.com/1-on-1-chat)" text="joining a private chat session" newTab="false"} on Callmechat. Simply put, private video chat means minimal data is required upon registration, and even that data won't be publicly accessible. Similar options are common: Google or DuckDuckGo, WhatsApp or Signal, Chrome or Tor.
+Also, if you have a choice, choose secure alternatives. For example, you can communicate via Discord or Talk via a secure video connection. A more privacy-friendly option is [joining a private chat session](https://callmechat.com/1-on-1-chat) on Callmechat. Simply put, private video chat means minimal data is required upon registration, and even that data won't be publicly accessible. Similar options are common: Google or DuckDuckGo, WhatsApp or Signal, Chrome or Tor.
 
 ## **Why Computer Optimization Also Means Better Security**
 

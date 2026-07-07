@@ -111,6 +111,10 @@ function withBase(path = '') {
 }
 
 function getCategoryHref(slug) {
+  if (articleCollectionDefinitions[slug]) {
+    return withBase(`${slug}/`);
+  }
+
   const definition = getCategoryDefinition(slug);
   return definition.parentSlug
     ? withBase(`${articleCollectionSlug}/${definition.parentSlug}/${slug}/`)
@@ -187,10 +191,18 @@ function decodeEntities(value = '') {
     .replace(/&#39;/g, "'");
 }
 
-function getPrimaryCategory(frontmatter) {
+function getCategorySlugFromPath(sourcePath) {
+  const match = sourcePath.match(/content\/(?:how-to\/)?([^/]+)\//);
+  const slug = match?.[1] || '';
+  return categoryDefinitions[slug] || articleCollectionDefinitions[slug]
+    ? slug
+    : 'knowledge-base';
+}
+
+function getPrimaryCategory(frontmatter, sourcePath) {
   const category = frontmatter.category || frontmatter.categories;
   if (Array.isArray(category)) return category[0] || 'knowledge-base';
-  return category || 'knowledge-base';
+  return category || getCategorySlugFromPath(sourcePath);
 }
 
 function getCategoryDefinition(slug) {
@@ -262,7 +274,7 @@ export const posts = Object.entries(rawPostModules)
     const frontmatter = getFrontmatter(raw);
     const slug = frontmatter.slug || getSlugFromPath(path);
     const collectionSlug = getCollectionSlugFromPath(path);
-    const categorySlug = getPrimaryCategory(frontmatter);
+    const categorySlug = getPrimaryCategory(frontmatter, path);
     const categoryInfo = getCategoryDefinition(categorySlug);
     const author = decodeEntities(getAuthor(frontmatter));
     const authorSlug = author ? slugify(author) : '';

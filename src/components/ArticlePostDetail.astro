@@ -55,14 +55,6 @@ const hasHeadings = post.headings.length > 0;
           )}
         </header>
 
-        {post.featured_image && (
-          <img
-            class="blog-hero-image"
-            src={post.featured_image}
-            alt={post.title}
-          />
-        )}
-
         <div class="blog-content" set:html={postHtml} />
       </article>
 

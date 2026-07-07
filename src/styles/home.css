@@ -588,12 +588,21 @@
   margin: 0 0 24px;
 }
 
+.blog-content a {
+  color: #0000ee;
+  text-decoration: underline;
+}
+
+.blog-content a:visited {
+  color: #551a8b;
+}
+
 .blog-content h2 {
   color: #222222;
-  font-size: 31px;
+  font-size: 38px;
   font-weight: 600;
-  line-height: 1.28;
-  margin: 46px 0 16px;
+  line-height: 1.22;
+  margin: 52px 0 18px;
 }
 
 .blog-content blockquote {

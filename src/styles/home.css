@@ -621,21 +621,28 @@
   padding: 20px 24px;
 }
 
-.blog-content ul {
-  list-style: disc outside;
-  margin: 0 0 20px 22px;
-  padding: 0;
+.post-page .blog-content ul {
+  list-style-position: outside !important;
+  list-style-type: disc !important;
+  margin: 0 0 20px;
+  padding-left: 28px !important;
 }
 
-.blog-content ol {
-  list-style: decimal outside;
-  margin: 0 0 20px 22px;
-  padding: 0;
+.post-page .blog-content ol {
+  list-style-position: outside !important;
+  list-style-type: decimal !important;
+  margin: 0 0 20px;
+  padding-left: 28px !important;
 }
 
-.blog-content li {
-  display: list-item;
+.post-page .blog-content li {
+  display: list-item !important;
   margin: 0 0 10px;
+}
+
+.post-page .blog-content li::marker {
+  color: #333333;
+  font-size: 1em;
 }
 
 .post-aside {

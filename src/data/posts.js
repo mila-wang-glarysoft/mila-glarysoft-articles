@@ -311,6 +311,45 @@ function isSafeHref(value = '') {
   return /^(https?:\/\/|mailto:|tel:|\/|#)/i.test(value.trim());
 }
 
+function isExternalHref(value = '') {
+  return /^https?:\/\//i.test(value) && !/^https?:\/\/([^/]+\.)?glarysoft\.com(?:\/|$)/i.test(value);
+}
+
+function mergeRel(value = '') {
+  return Array.from(
+    new Set(
+      value
+        .split(/\s+/)
+        .concat(['nofollow', 'noopener', 'noreferrer'])
+        .filter(Boolean)
+    )
+  ).join(' ');
+}
+
+function addNofollowToExternalLinks(html = '') {
+  return html.replace(/<a\b([^>]*)>/gi, (tag, attributes) => {
+    const hrefMatch = attributes.match(/\shref=(["'])(.*?)\1/i);
+    if (!hrefMatch || !isExternalHref(hrefMatch[2])) return tag;
+
+    let nextAttributes = attributes;
+    const relMatch = nextAttributes.match(/\srel=(["'])(.*?)\1/i);
+    if (relMatch) {
+      nextAttributes = nextAttributes.replace(
+        relMatch[0],
+        ` rel=${relMatch[1]}${mergeRel(relMatch[2])}${relMatch[1]}`
+      );
+    } else {
+      nextAttributes += ' rel="nofollow noopener noreferrer"';
+    }
+
+    if (!/\starget=(["']).*?\1/i.test(nextAttributes)) {
+      nextAttributes += ' target="_blank"';
+    }
+
+    return `<a${nextAttributes}>`;
+  });
+}
+
 export function renderNofollowLinks(markdown = '') {
   return markdown.replace(/::nofollow-link\{([^}\n]+)\}/g, (shortcode, rawAttributes) => {
     const attributes = parseShortcodeAttributes(rawAttributes);
@@ -330,9 +369,11 @@ export function renderNofollowLinks(markdown = '') {
 }
 
 export function renderPostHtml(post) {
-  return marked
+  const html = marked
     .parse(renderNofollowLinks(post.body || ''))
     .replace(/src="\/uploads\//g, `src="${withBase('articles/uploads/')}`);
+
+  return post.nofollow_links ? addNofollowToExternalLinks(html) : html;
 }
 
 export const posts = Object.entries(rawPostModules)

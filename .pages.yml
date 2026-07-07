@@ -35,7 +35,8 @@ content:
                 required: true
                 default: clean-up-repair
                 options:
-                  - clean-up-repair
+                  values:
+                    - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -48,6 +49,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -78,7 +83,8 @@ content:
                 required: true
                 default: clean-up-repair
                 options:
-                  - clean-up-repair
+                  values:
+                    - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -91,6 +97,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -121,7 +131,8 @@ content:
                 required: true
                 default: clean-up-repair
                 options:
-                  - clean-up-repair
+                  values:
+                    - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -134,6 +145,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -164,7 +179,8 @@ content:
                 required: true
                 default: clean-up-repair
                 options:
-                  - clean-up-repair
+                  values:
+                    - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -177,6 +193,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -207,7 +227,8 @@ content:
                 required: true
                 default: clean-up-repair
                 options:
-                  - clean-up-repair
+                  values:
+                    - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -220,6 +241,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -250,7 +275,8 @@ content:
                 required: true
                 default: clean-up-repair
                 options:
-                  - clean-up-repair
+                  values:
+                    - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -263,6 +289,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -293,7 +323,8 @@ content:
                 required: true
                 default: clean-up-repair
                 options:
-                  - clean-up-repair
+                  values:
+                    - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -306,6 +337,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -336,7 +371,8 @@ content:
                 required: true
                 default: clean-up-repair
                 options:
-                  - clean-up-repair
+                  values:
+                    - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -349,6 +385,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -379,7 +419,8 @@ content:
                 required: true
                 default: clean-up-repair
                 options:
-                  - clean-up-repair
+                  values:
+                    - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -392,6 +433,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -422,7 +467,8 @@ content:
                 required: true
                 default: clean-up-repair
                 options:
-                  - clean-up-repair
+                  values:
+                    - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -435,6 +481,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -465,7 +515,8 @@ content:
                 required: true
                 default: clean-up-repair
                 options:
-                  - clean-up-repair
+                  values:
+                    - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -478,6 +529,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -508,7 +563,8 @@ content:
                 required: true
                 default: clean-up-repair
                 options:
-                  - clean-up-repair
+                  values:
+                    - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -521,6 +577,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -551,7 +611,8 @@ content:
                 required: true
                 default: clean-up-repair
                 options:
-                  - clean-up-repair
+                  values:
+                    - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -564,6 +625,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -594,7 +659,8 @@ content:
                 required: true
                 default: clean-up-repair
                 options:
-                  - clean-up-repair
+                  values:
+                    - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -607,6 +673,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -637,7 +707,8 @@ content:
                 required: true
                 default: clean-up-repair
                 options:
-                  - clean-up-repair
+                  values:
+                    - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -650,6 +721,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -680,7 +755,8 @@ content:
                 required: true
                 default: clean-up-repair
                 options:
-                  - clean-up-repair
+                  values:
+                    - clean-up-repair
               - name: author
                 label: Author
                 type: string
@@ -693,6 +769,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -727,7 +807,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -740,6 +821,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -770,7 +855,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -783,6 +869,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -813,7 +903,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -826,6 +917,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -856,7 +951,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -869,6 +965,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -899,7 +999,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -912,6 +1013,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -942,7 +1047,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -955,6 +1061,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -985,7 +1095,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -998,6 +1109,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1028,7 +1143,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1041,6 +1157,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1071,7 +1191,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1084,6 +1205,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1114,7 +1239,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1127,6 +1253,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1157,7 +1287,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1170,6 +1301,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1200,7 +1335,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1213,6 +1349,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1243,7 +1383,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1256,6 +1397,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1286,7 +1431,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1299,6 +1445,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1329,7 +1479,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1342,6 +1493,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1372,7 +1527,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1385,6 +1541,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1415,7 +1575,8 @@ content:
                 required: true
                 default: optimize-improve
                 options:
-                  - optimize-improve
+                  values:
+                    - optimize-improve
               - name: author
                 label: Author
                 type: string
@@ -1428,6 +1589,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1462,7 +1627,8 @@ content:
                 required: true
                 default: privacy-security
                 options:
-                  - privacy-security
+                  values:
+                    - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1475,6 +1641,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1505,7 +1675,8 @@ content:
                 required: true
                 default: privacy-security
                 options:
-                  - privacy-security
+                  values:
+                    - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1518,6 +1689,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1548,7 +1723,8 @@ content:
                 required: true
                 default: privacy-security
                 options:
-                  - privacy-security
+                  values:
+                    - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1561,6 +1737,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1591,7 +1771,8 @@ content:
                 required: true
                 default: privacy-security
                 options:
-                  - privacy-security
+                  values:
+                    - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1604,6 +1785,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1634,7 +1819,8 @@ content:
                 required: true
                 default: privacy-security
                 options:
-                  - privacy-security
+                  values:
+                    - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1647,6 +1833,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1677,7 +1867,8 @@ content:
                 required: true
                 default: privacy-security
                 options:
-                  - privacy-security
+                  values:
+                    - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1690,6 +1881,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1720,7 +1915,8 @@ content:
                 required: true
                 default: privacy-security
                 options:
-                  - privacy-security
+                  values:
+                    - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1733,6 +1929,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1763,7 +1963,8 @@ content:
                 required: true
                 default: privacy-security
                 options:
-                  - privacy-security
+                  values:
+                    - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1776,6 +1977,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1806,7 +2011,8 @@ content:
                 required: true
                 default: privacy-security
                 options:
-                  - privacy-security
+                  values:
+                    - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1819,6 +2025,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1849,7 +2059,8 @@ content:
                 required: true
                 default: privacy-security
                 options:
-                  - privacy-security
+                  values:
+                    - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1862,6 +2073,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1892,7 +2107,8 @@ content:
                 required: true
                 default: privacy-security
                 options:
-                  - privacy-security
+                  values:
+                    - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1905,6 +2121,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1935,7 +2155,8 @@ content:
                 required: true
                 default: privacy-security
                 options:
-                  - privacy-security
+                  values:
+                    - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1948,6 +2169,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -1978,7 +2203,8 @@ content:
                 required: true
                 default: privacy-security
                 options:
-                  - privacy-security
+                  values:
+                    - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -1991,6 +2217,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2021,7 +2251,8 @@ content:
                 required: true
                 default: privacy-security
                 options:
-                  - privacy-security
+                  values:
+                    - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -2034,6 +2265,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2064,7 +2299,8 @@ content:
                 required: true
                 default: privacy-security
                 options:
-                  - privacy-security
+                  values:
+                    - privacy-security
               - name: author
                 label: Author
                 type: string
@@ -2077,6 +2313,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2111,7 +2351,8 @@ content:
                 required: true
                 default: files-folders
                 options:
-                  - files-folders
+                  values:
+                    - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2124,6 +2365,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2154,7 +2399,8 @@ content:
                 required: true
                 default: files-folders
                 options:
-                  - files-folders
+                  values:
+                    - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2167,6 +2413,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2197,7 +2447,8 @@ content:
                 required: true
                 default: files-folders
                 options:
-                  - files-folders
+                  values:
+                    - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2210,6 +2461,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2240,7 +2495,8 @@ content:
                 required: true
                 default: files-folders
                 options:
-                  - files-folders
+                  values:
+                    - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2253,6 +2509,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2283,7 +2543,8 @@ content:
                 required: true
                 default: files-folders
                 options:
-                  - files-folders
+                  values:
+                    - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2296,6 +2557,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2326,7 +2591,8 @@ content:
                 required: true
                 default: files-folders
                 options:
-                  - files-folders
+                  values:
+                    - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2339,6 +2605,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2369,7 +2639,8 @@ content:
                 required: true
                 default: files-folders
                 options:
-                  - files-folders
+                  values:
+                    - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2382,6 +2653,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2412,7 +2687,8 @@ content:
                 required: true
                 default: files-folders
                 options:
-                  - files-folders
+                  values:
+                    - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2425,6 +2701,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2455,7 +2735,8 @@ content:
                 required: true
                 default: files-folders
                 options:
-                  - files-folders
+                  values:
+                    - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2468,6 +2749,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2498,7 +2783,8 @@ content:
                 required: true
                 default: files-folders
                 options:
-                  - files-folders
+                  values:
+                    - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2511,6 +2797,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2541,7 +2831,8 @@ content:
                 required: true
                 default: files-folders
                 options:
-                  - files-folders
+                  values:
+                    - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2554,6 +2845,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2584,7 +2879,8 @@ content:
                 required: true
                 default: files-folders
                 options:
-                  - files-folders
+                  values:
+                    - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2597,6 +2893,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2627,7 +2927,8 @@ content:
                 required: true
                 default: files-folders
                 options:
-                  - files-folders
+                  values:
+                    - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2640,6 +2941,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2670,7 +2975,8 @@ content:
                 required: true
                 default: files-folders
                 options:
-                  - files-folders
+                  values:
+                    - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2683,6 +2989,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2713,7 +3023,8 @@ content:
                 required: true
                 default: files-folders
                 options:
-                  - files-folders
+                  values:
+                    - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2726,6 +3037,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2756,7 +3071,8 @@ content:
                 required: true
                 default: files-folders
                 options:
-                  - files-folders
+                  values:
+                    - files-folders
               - name: author
                 label: Author
                 type: string
@@ -2769,6 +3085,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2803,7 +3123,8 @@ content:
                 required: true
                 default: system-tools
                 options:
-                  - system-tools
+                  values:
+                    - system-tools
               - name: author
                 label: Author
                 type: string
@@ -2816,6 +3137,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2846,7 +3171,8 @@ content:
                 required: true
                 default: system-tools
                 options:
-                  - system-tools
+                  values:
+                    - system-tools
               - name: author
                 label: Author
                 type: string
@@ -2859,6 +3185,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2889,7 +3219,8 @@ content:
                 required: true
                 default: system-tools
                 options:
-                  - system-tools
+                  values:
+                    - system-tools
               - name: author
                 label: Author
                 type: string
@@ -2902,6 +3233,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2932,7 +3267,8 @@ content:
                 required: true
                 default: system-tools
                 options:
-                  - system-tools
+                  values:
+                    - system-tools
               - name: author
                 label: Author
                 type: string
@@ -2945,6 +3281,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -2975,7 +3315,8 @@ content:
                 required: true
                 default: system-tools
                 options:
-                  - system-tools
+                  values:
+                    - system-tools
               - name: author
                 label: Author
                 type: string
@@ -2988,6 +3329,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -3018,7 +3363,8 @@ content:
                 required: true
                 default: system-tools
                 options:
-                  - system-tools
+                  values:
+                    - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3031,6 +3377,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -3061,7 +3411,8 @@ content:
                 required: true
                 default: system-tools
                 options:
-                  - system-tools
+                  values:
+                    - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3074,6 +3425,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -3104,7 +3459,8 @@ content:
                 required: true
                 default: system-tools
                 options:
-                  - system-tools
+                  values:
+                    - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3117,6 +3473,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -3147,7 +3507,8 @@ content:
                 required: true
                 default: system-tools
                 options:
-                  - system-tools
+                  values:
+                    - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3160,6 +3521,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -3190,7 +3555,8 @@ content:
                 required: true
                 default: system-tools
                 options:
-                  - system-tools
+                  values:
+                    - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3203,6 +3569,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -3233,7 +3603,8 @@ content:
                 required: true
                 default: system-tools
                 options:
-                  - system-tools
+                  values:
+                    - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3246,6 +3617,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -3276,7 +3651,8 @@ content:
                 required: true
                 default: system-tools
                 options:
-                  - system-tools
+                  values:
+                    - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3289,6 +3665,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -3319,7 +3699,8 @@ content:
                 required: true
                 default: system-tools
                 options:
-                  - system-tools
+                  values:
+                    - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3332,6 +3713,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -3362,7 +3747,8 @@ content:
                 required: true
                 default: system-tools
                 options:
-                  - system-tools
+                  values:
+                    - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3375,6 +3761,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -3405,7 +3795,8 @@ content:
                 required: true
                 default: system-tools
                 options:
-                  - system-tools
+                  values:
+                    - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3418,6 +3809,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -3448,7 +3843,8 @@ content:
                 required: true
                 default: system-tools
                 options:
-                  - system-tools
+                  values:
+                    - system-tools
               - name: author
                 label: Author
                 type: string
@@ -3461,6 +3857,10 @@ content:
                 type: image
               - name: draft
                 label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
                 type: boolean
                 default: false
               - name: body
@@ -3491,7 +3891,8 @@ content:
         required: true
         default: windows-tips
         options:
-          - windows-tips
+          values:
+            - windows-tips
       - name: author
         label: Author
         type: string
@@ -3504,6 +3905,10 @@ content:
         type: image
       - name: draft
         label: Draft
+        type: boolean
+        default: false
+      - name: nofollow_links
+        label: Nofollow external links
         type: boolean
         default: false
       - name: body
@@ -3534,7 +3939,8 @@ content:
         required: true
         default: hardware
         options:
-          - hardware
+          values:
+            - hardware
       - name: author
         label: Author
         type: string
@@ -3547,6 +3953,10 @@ content:
         type: image
       - name: draft
         label: Draft
+        type: boolean
+        default: false
+      - name: nofollow_links
+        label: Nofollow external links
         type: boolean
         default: false
       - name: body

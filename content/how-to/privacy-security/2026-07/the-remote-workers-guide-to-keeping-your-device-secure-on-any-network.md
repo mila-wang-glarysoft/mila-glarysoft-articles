@@ -3,11 +3,13 @@ title: The Remote Worker's Guide to Keeping Your Device Secure on Any Network
 categories: privacy-security
 author: Rebecca
 date: 2026-07-07
-featured_image: /uploads/pexels-mikhail-nilov-8937543.jpg
+featured_image: /articles/uploads/pexels-mikhail-nilov-8937543.jpg
 draft: false
 nofollow_links: true
 ---
 Working at a cafe, then working at home at night, then a hotel the following week. Each switch is a little risky. Until there's a problem, most remote workers don't give it a second thought.
+
+![](/articles/uploads/pexels-mikhail-nilov-8937543.jpg)
 
 ## **Remote Work Has Changed the Security Equation**
 

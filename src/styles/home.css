@@ -597,12 +597,18 @@
   color: #551a8b;
 }
 
-.blog-content h2 {
+.post-page .blog-content h2 {
   color: #222222;
   font-size: 38px;
   font-weight: 600;
   line-height: 1.22;
   margin: 52px 0 18px;
+}
+
+.post-page .blog-content h2 strong {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
 }
 
 .blog-content blockquote {
@@ -616,11 +622,19 @@
 }
 
 .blog-content ul {
+  list-style: disc outside;
+  margin: 0 0 20px 22px;
+  padding: 0;
+}
+
+.blog-content ol {
+  list-style: decimal outside;
   margin: 0 0 20px 22px;
   padding: 0;
 }
 
 .blog-content li {
+  display: list-item;
   margin: 0 0 10px;
 }
 

@@ -373,7 +373,7 @@ export function renderPostHtml(post) {
     .parse(renderNofollowLinks(post.body || ''))
     .replace(/src="\/uploads\//g, `src="${withBase('articles/uploads/')}`);
 
-  return post.nofollow_links ? addNofollowToExternalLinks(html) : html;
+  return post.nofollow_links === false ? html : addNofollowToExternalLinks(html);
 }
 
 export const posts = Object.entries(rawPostModules)

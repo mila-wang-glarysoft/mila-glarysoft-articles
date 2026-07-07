@@ -7,13 +7,11 @@ content:
     label: How To
     type: group
     items:
-      - name: how_to_clean_up_repair
-        label: Clean Up & Repair
+      - name: how_to_clean_up_repair_2026_07
+        label: Clean Up & Repair / 2026-07
         type: collection
-        path: content/how-to/clean-up-repair
-        filename:
-          template: "{primary}.md"
-          field: create
+        path: content/how-to/clean-up-repair/2026-07
+        filename: "{primary}.md"
         view:
           fields: [title, categories, author, date, draft]
           primary: title
@@ -46,15 +44,9 @@ content:
             label: Publish Date
             type: date
             required: true
-          - name: excerpt
-            label: Excerpt
-            type: text
           - name: featured_image
             label: Featured Image
             type: image
-          - name: reading_time
-            label: Reading Time
-            type: string
           - name: draft
             label: Draft
             type: boolean
@@ -63,13 +55,731 @@ content:
             label: Body
             type: rich-text
 
-      - name: how_to_optimize_improve
-        label: Optimize & Improve
+      - name: how_to_clean_up_repair_2026_06
+        label: Clean Up & Repair / 2026-06
         type: collection
-        path: content/how-to/optimize-improve
-        filename:
-          template: "{primary}.md"
-          field: create
+        path: content/how-to/clean-up-repair/2026-06
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [clean-up-repair]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_clean_up_repair_2026_05
+        label: Clean Up & Repair / 2026-05
+        type: collection
+        path: content/how-to/clean-up-repair/2026-05
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [clean-up-repair]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_clean_up_repair_2026_04
+        label: Clean Up & Repair / 2026-04
+        type: collection
+        path: content/how-to/clean-up-repair/2026-04
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [clean-up-repair]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_clean_up_repair_2026_03
+        label: Clean Up & Repair / 2026-03
+        type: collection
+        path: content/how-to/clean-up-repair/2026-03
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [clean-up-repair]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_clean_up_repair_2026_02
+        label: Clean Up & Repair / 2026-02
+        type: collection
+        path: content/how-to/clean-up-repair/2026-02
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [clean-up-repair]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_clean_up_repair_2026_01
+        label: Clean Up & Repair / 2026-01
+        type: collection
+        path: content/how-to/clean-up-repair/2026-01
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [clean-up-repair]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_clean_up_repair_2025_12
+        label: Clean Up & Repair / 2025-12
+        type: collection
+        path: content/how-to/clean-up-repair/2025-12
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [clean-up-repair]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_clean_up_repair_2025_11
+        label: Clean Up & Repair / 2025-11
+        type: collection
+        path: content/how-to/clean-up-repair/2025-11
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [clean-up-repair]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_clean_up_repair_2025_10
+        label: Clean Up & Repair / 2025-10
+        type: collection
+        path: content/how-to/clean-up-repair/2025-10
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [clean-up-repair]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_clean_up_repair_2025_09
+        label: Clean Up & Repair / 2025-09
+        type: collection
+        path: content/how-to/clean-up-repair/2025-09
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [clean-up-repair]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_clean_up_repair_2025_08
+        label: Clean Up & Repair / 2025-08
+        type: collection
+        path: content/how-to/clean-up-repair/2025-08
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [clean-up-repair]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_clean_up_repair_2025_07
+        label: Clean Up & Repair / 2025-07
+        type: collection
+        path: content/how-to/clean-up-repair/2025-07
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [clean-up-repair]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_clean_up_repair_2025_06
+        label: Clean Up & Repair / 2025-06
+        type: collection
+        path: content/how-to/clean-up-repair/2025-06
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [clean-up-repair]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_clean_up_repair_2025_05
+        label: Clean Up & Repair / 2025-05
+        type: collection
+        path: content/how-to/clean-up-repair/2025-05
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [clean-up-repair]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_clean_up_repair_2025_04
+        label: Clean Up & Repair / 2025-04
+        type: collection
+        path: content/how-to/clean-up-repair/2025-04
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [clean-up-repair]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_optimize_improve_2026_07
+        label: Optimize & Improve / 2026-07
+        type: collection
+        path: content/how-to/optimize-improve/2026-07
+        filename: "{primary}.md"
         view:
           fields: [title, categories, author, date, draft]
           primary: title
@@ -102,15 +812,9 @@ content:
             label: Publish Date
             type: date
             required: true
-          - name: excerpt
-            label: Excerpt
-            type: text
           - name: featured_image
             label: Featured Image
             type: image
-          - name: reading_time
-            label: Reading Time
-            type: string
           - name: draft
             label: Draft
             type: boolean
@@ -119,13 +823,779 @@ content:
             label: Body
             type: rich-text
 
-      - name: how_to_privacy_security
-        label: Privacy & Security
+      - name: how_to_optimize_improve_2026_04
+        label: Optimize & Improve / 2026-04
         type: collection
-        path: content/how-to/privacy-security
-        filename:
-          template: "{primary}.md"
-          field: create
+        path: content/how-to/optimize-improve/2026-04
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [optimize-improve]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_optimize_improve_2026_03
+        label: Optimize & Improve / 2026-03
+        type: collection
+        path: content/how-to/optimize-improve/2026-03
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [optimize-improve]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_optimize_improve_2026_02
+        label: Optimize & Improve / 2026-02
+        type: collection
+        path: content/how-to/optimize-improve/2026-02
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [optimize-improve]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_optimize_improve_2026_01
+        label: Optimize & Improve / 2026-01
+        type: collection
+        path: content/how-to/optimize-improve/2026-01
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [optimize-improve]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_optimize_improve_2025_12
+        label: Optimize & Improve / 2025-12
+        type: collection
+        path: content/how-to/optimize-improve/2025-12
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [optimize-improve]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_optimize_improve_2025_11
+        label: Optimize & Improve / 2025-11
+        type: collection
+        path: content/how-to/optimize-improve/2025-11
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [optimize-improve]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_optimize_improve_2025_10
+        label: Optimize & Improve / 2025-10
+        type: collection
+        path: content/how-to/optimize-improve/2025-10
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [optimize-improve]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_optimize_improve_2025_09
+        label: Optimize & Improve / 2025-09
+        type: collection
+        path: content/how-to/optimize-improve/2025-09
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [optimize-improve]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_optimize_improve_2025_08
+        label: Optimize & Improve / 2025-08
+        type: collection
+        path: content/how-to/optimize-improve/2025-08
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [optimize-improve]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_optimize_improve_2025_07
+        label: Optimize & Improve / 2025-07
+        type: collection
+        path: content/how-to/optimize-improve/2025-07
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [optimize-improve]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_optimize_improve_2025_06
+        label: Optimize & Improve / 2025-06
+        type: collection
+        path: content/how-to/optimize-improve/2025-06
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [optimize-improve]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_optimize_improve_2025_05
+        label: Optimize & Improve / 2025-05
+        type: collection
+        path: content/how-to/optimize-improve/2025-05
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [optimize-improve]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_optimize_improve_2025_04
+        label: Optimize & Improve / 2025-04
+        type: collection
+        path: content/how-to/optimize-improve/2025-04
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [optimize-improve]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_optimize_improve_2024_06
+        label: Optimize & Improve / 2024-06
+        type: collection
+        path: content/how-to/optimize-improve/2024-06
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [optimize-improve]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_optimize_improve_2024_05
+        label: Optimize & Improve / 2024-05
+        type: collection
+        path: content/how-to/optimize-improve/2024-05
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [optimize-improve]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_optimize_improve_2024_04
+        label: Optimize & Improve / 2024-04
+        type: collection
+        path: content/how-to/optimize-improve/2024-04
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [optimize-improve]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_privacy_security_2026_07
+        label: Privacy & Security / 2026-07
+        type: collection
+        path: content/how-to/privacy-security/2026-07
+        filename: "{primary}.md"
         view:
           fields: [title, categories, author, date, draft]
           primary: title
@@ -158,15 +1628,9 @@ content:
             label: Publish Date
             type: date
             required: true
-          - name: excerpt
-            label: Excerpt
-            type: text
           - name: featured_image
             label: Featured Image
             type: image
-          - name: reading_time
-            label: Reading Time
-            type: string
           - name: draft
             label: Draft
             type: boolean
@@ -175,13 +1639,683 @@ content:
             label: Body
             type: rich-text
 
-      - name: how_to_files_folders
-        label: Files & Folders
+      - name: how_to_privacy_security_2026_06
+        label: Privacy & Security / 2026-06
         type: collection
-        path: content/how-to/files-folders
-        filename:
-          template: "{primary}.md"
-          field: create
+        path: content/how-to/privacy-security/2026-06
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [privacy-security]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_privacy_security_2026_04
+        label: Privacy & Security / 2026-04
+        type: collection
+        path: content/how-to/privacy-security/2026-04
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [privacy-security]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_privacy_security_2026_03
+        label: Privacy & Security / 2026-03
+        type: collection
+        path: content/how-to/privacy-security/2026-03
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [privacy-security]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_privacy_security_2026_02
+        label: Privacy & Security / 2026-02
+        type: collection
+        path: content/how-to/privacy-security/2026-02
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [privacy-security]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_privacy_security_2026_01
+        label: Privacy & Security / 2026-01
+        type: collection
+        path: content/how-to/privacy-security/2026-01
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [privacy-security]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_privacy_security_2025_12
+        label: Privacy & Security / 2025-12
+        type: collection
+        path: content/how-to/privacy-security/2025-12
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [privacy-security]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_privacy_security_2025_11
+        label: Privacy & Security / 2025-11
+        type: collection
+        path: content/how-to/privacy-security/2025-11
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [privacy-security]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_privacy_security_2025_10
+        label: Privacy & Security / 2025-10
+        type: collection
+        path: content/how-to/privacy-security/2025-10
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [privacy-security]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_privacy_security_2025_09
+        label: Privacy & Security / 2025-09
+        type: collection
+        path: content/how-to/privacy-security/2025-09
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [privacy-security]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_privacy_security_2025_08
+        label: Privacy & Security / 2025-08
+        type: collection
+        path: content/how-to/privacy-security/2025-08
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [privacy-security]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_privacy_security_2025_07
+        label: Privacy & Security / 2025-07
+        type: collection
+        path: content/how-to/privacy-security/2025-07
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [privacy-security]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_privacy_security_2025_06
+        label: Privacy & Security / 2025-06
+        type: collection
+        path: content/how-to/privacy-security/2025-06
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [privacy-security]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_privacy_security_2025_05
+        label: Privacy & Security / 2025-05
+        type: collection
+        path: content/how-to/privacy-security/2025-05
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [privacy-security]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_privacy_security_2025_04
+        label: Privacy & Security / 2025-04
+        type: collection
+        path: content/how-to/privacy-security/2025-04
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [privacy-security]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_files_folders_2026_07
+        label: Files & Folders / 2026-07
+        type: collection
+        path: content/how-to/files-folders/2026-07
+        filename: "{primary}.md"
         view:
           fields: [title, categories, author, date, draft]
           primary: title
@@ -214,15 +2348,9 @@ content:
             label: Publish Date
             type: date
             required: true
-          - name: excerpt
-            label: Excerpt
-            type: text
           - name: featured_image
             label: Featured Image
             type: image
-          - name: reading_time
-            label: Reading Time
-            type: string
           - name: draft
             label: Draft
             type: boolean
@@ -231,13 +2359,731 @@ content:
             label: Body
             type: rich-text
 
-      - name: how_to_system_tools
-        label: System Tools
+      - name: how_to_files_folders_2026_06
+        label: Files & Folders / 2026-06
         type: collection
-        path: content/how-to/system-tools
-        filename:
-          template: "{primary}.md"
-          field: create
+        path: content/how-to/files-folders/2026-06
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [files-folders]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_files_folders_2026_05
+        label: Files & Folders / 2026-05
+        type: collection
+        path: content/how-to/files-folders/2026-05
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [files-folders]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_files_folders_2026_04
+        label: Files & Folders / 2026-04
+        type: collection
+        path: content/how-to/files-folders/2026-04
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [files-folders]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_files_folders_2026_03
+        label: Files & Folders / 2026-03
+        type: collection
+        path: content/how-to/files-folders/2026-03
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [files-folders]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_files_folders_2026_02
+        label: Files & Folders / 2026-02
+        type: collection
+        path: content/how-to/files-folders/2026-02
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [files-folders]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_files_folders_2026_01
+        label: Files & Folders / 2026-01
+        type: collection
+        path: content/how-to/files-folders/2026-01
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [files-folders]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_files_folders_2025_12
+        label: Files & Folders / 2025-12
+        type: collection
+        path: content/how-to/files-folders/2025-12
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [files-folders]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_files_folders_2025_11
+        label: Files & Folders / 2025-11
+        type: collection
+        path: content/how-to/files-folders/2025-11
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [files-folders]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_files_folders_2025_10
+        label: Files & Folders / 2025-10
+        type: collection
+        path: content/how-to/files-folders/2025-10
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [files-folders]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_files_folders_2025_09
+        label: Files & Folders / 2025-09
+        type: collection
+        path: content/how-to/files-folders/2025-09
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [files-folders]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_files_folders_2025_08
+        label: Files & Folders / 2025-08
+        type: collection
+        path: content/how-to/files-folders/2025-08
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [files-folders]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_files_folders_2025_07
+        label: Files & Folders / 2025-07
+        type: collection
+        path: content/how-to/files-folders/2025-07
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [files-folders]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_files_folders_2025_06
+        label: Files & Folders / 2025-06
+        type: collection
+        path: content/how-to/files-folders/2025-06
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [files-folders]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_files_folders_2025_05
+        label: Files & Folders / 2025-05
+        type: collection
+        path: content/how-to/files-folders/2025-05
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [files-folders]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_files_folders_2025_04
+        label: Files & Folders / 2025-04
+        type: collection
+        path: content/how-to/files-folders/2025-04
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [files-folders]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_system_tools_2026_07
+        label: System Tools / 2026-07
+        type: collection
+        path: content/how-to/system-tools/2026-07
+        filename: "{primary}.md"
         view:
           fields: [title, categories, author, date, draft]
           primary: title
@@ -270,15 +3116,729 @@ content:
             label: Publish Date
             type: date
             required: true
-          - name: excerpt
-            label: Excerpt
-            type: text
           - name: featured_image
             label: Featured Image
             type: image
-          - name: reading_time
-            label: Reading Time
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_system_tools_2026_06
+        label: System Tools / 2026-06
+        type: collection
+        path: content/how-to/system-tools/2026-06
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
             type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [system-tools]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_system_tools_2026_05
+        label: System Tools / 2026-05
+        type: collection
+        path: content/how-to/system-tools/2026-05
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [system-tools]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_system_tools_2026_04
+        label: System Tools / 2026-04
+        type: collection
+        path: content/how-to/system-tools/2026-04
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [system-tools]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_system_tools_2026_03
+        label: System Tools / 2026-03
+        type: collection
+        path: content/how-to/system-tools/2026-03
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [system-tools]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_system_tools_2026_02
+        label: System Tools / 2026-02
+        type: collection
+        path: content/how-to/system-tools/2026-02
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [system-tools]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_system_tools_2026_01
+        label: System Tools / 2026-01
+        type: collection
+        path: content/how-to/system-tools/2026-01
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [system-tools]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_system_tools_2025_12
+        label: System Tools / 2025-12
+        type: collection
+        path: content/how-to/system-tools/2025-12
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [system-tools]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_system_tools_2025_11
+        label: System Tools / 2025-11
+        type: collection
+        path: content/how-to/system-tools/2025-11
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [system-tools]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_system_tools_2025_10
+        label: System Tools / 2025-10
+        type: collection
+        path: content/how-to/system-tools/2025-10
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [system-tools]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_system_tools_2025_09
+        label: System Tools / 2025-09
+        type: collection
+        path: content/how-to/system-tools/2025-09
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [system-tools]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_system_tools_2025_08
+        label: System Tools / 2025-08
+        type: collection
+        path: content/how-to/system-tools/2025-08
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [system-tools]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_system_tools_2025_07
+        label: System Tools / 2025-07
+        type: collection
+        path: content/how-to/system-tools/2025-07
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [system-tools]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_system_tools_2025_06
+        label: System Tools / 2025-06
+        type: collection
+        path: content/how-to/system-tools/2025-06
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [system-tools]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_system_tools_2025_05
+        label: System Tools / 2025-05
+        type: collection
+        path: content/how-to/system-tools/2025-05
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [system-tools]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
+          - name: draft
+            label: Draft
+            type: boolean
+            default: false
+          - name: body
+            label: Body
+            type: rich-text
+
+      - name: how_to_system_tools_2025_04
+        label: System Tools / 2025-04
+        type: collection
+        path: content/how-to/system-tools/2025-04
+        filename: "{primary}.md"
+        view:
+          fields: [title, categories, author, date, draft]
+          primary: title
+          sort: [date, title]
+          search: [title, author, body]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: select
+            list: true
+            required: true
+            default: [system-tools]
+            options:
+              - clean-up-repair
+              - optimize-improve
+              - privacy-security
+              - files-folders
+              - system-tools
+          - name: author
+            label: Author
+            type: string
+          - name: date
+            label: Publish Date
+            type: date
+            required: true
+          - name: featured_image
+            label: Featured Image
+            type: image
           - name: draft
             label: Draft
             type: boolean
@@ -291,9 +3851,7 @@ content:
     label: Windows Tips
     type: collection
     path: content/windows-tips
-    filename:
-      template: "{primary}.md"
-      field: create
+    filename: "{primary}.md"
     view:
       fields: [title, categories, author, date, draft]
       primary: title
@@ -322,15 +3880,9 @@ content:
         label: Publish Date
         type: date
         required: true
-      - name: excerpt
-        label: Excerpt
-        type: text
       - name: featured_image
         label: Featured Image
         type: image
-      - name: reading_time
-        label: Reading Time
-        type: string
       - name: draft
         label: Draft
         type: boolean
@@ -343,9 +3895,7 @@ content:
     label: Hardware
     type: collection
     path: content/hardware
-    filename:
-      template: "{primary}.md"
-      field: create
+    filename: "{primary}.md"
     view:
       fields: [title, categories, author, date, draft]
       primary: title
@@ -374,15 +3924,9 @@ content:
         label: Publish Date
         type: date
         required: true
-      - name: excerpt
-        label: Excerpt
-        type: text
       - name: featured_image
         label: Featured Image
         type: image
-      - name: reading_time
-        label: Reading Time
-        type: string
       - name: draft
         label: Draft
         type: boolean

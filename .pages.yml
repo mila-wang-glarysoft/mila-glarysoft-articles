@@ -33,8 +33,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [clean-up-repair]
                 options:
                     - clean-up-repair
@@ -82,8 +81,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [clean-up-repair]
                 options:
                     - clean-up-repair
@@ -131,8 +129,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [clean-up-repair]
                 options:
                     - clean-up-repair
@@ -180,8 +177,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [clean-up-repair]
                 options:
                     - clean-up-repair
@@ -229,8 +225,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [clean-up-repair]
                 options:
                     - clean-up-repair
@@ -278,8 +273,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [clean-up-repair]
                 options:
                     - clean-up-repair
@@ -327,8 +321,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [clean-up-repair]
                 options:
                     - clean-up-repair
@@ -376,8 +369,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [clean-up-repair]
                 options:
                     - clean-up-repair
@@ -425,8 +417,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [clean-up-repair]
                 options:
                     - clean-up-repair
@@ -474,8 +465,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [clean-up-repair]
                 options:
                     - clean-up-repair
@@ -523,8 +513,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [clean-up-repair]
                 options:
                     - clean-up-repair
@@ -572,8 +561,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [clean-up-repair]
                 options:
                     - clean-up-repair
@@ -621,8 +609,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [clean-up-repair]
                 options:
                     - clean-up-repair
@@ -670,8 +657,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [clean-up-repair]
                 options:
                     - clean-up-repair
@@ -719,8 +705,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [clean-up-repair]
                 options:
                     - clean-up-repair
@@ -768,8 +753,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [clean-up-repair]
                 options:
                     - clean-up-repair
@@ -821,8 +805,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -870,8 +853,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -919,8 +901,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -968,8 +949,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -1017,8 +997,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -1066,8 +1045,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -1115,8 +1093,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -1164,8 +1141,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -1213,8 +1189,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -1262,8 +1237,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -1311,8 +1285,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -1360,8 +1333,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -1409,8 +1381,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -1458,8 +1429,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -1507,8 +1477,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -1556,8 +1525,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -1605,8 +1573,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [optimize-improve]
                 options:
                     - clean-up-repair
@@ -1658,8 +1625,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [privacy-security]
                 options:
                     - clean-up-repair
@@ -1707,8 +1673,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [privacy-security]
                 options:
                     - clean-up-repair
@@ -1756,8 +1721,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [privacy-security]
                 options:
                     - clean-up-repair
@@ -1805,8 +1769,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [privacy-security]
                 options:
                     - clean-up-repair
@@ -1854,8 +1817,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [privacy-security]
                 options:
                     - clean-up-repair
@@ -1903,8 +1865,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [privacy-security]
                 options:
                     - clean-up-repair
@@ -1952,8 +1913,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [privacy-security]
                 options:
                     - clean-up-repair
@@ -2001,8 +1961,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [privacy-security]
                 options:
                     - clean-up-repair
@@ -2050,8 +2009,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [privacy-security]
                 options:
                     - clean-up-repair
@@ -2099,8 +2057,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [privacy-security]
                 options:
                     - clean-up-repair
@@ -2148,8 +2105,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [privacy-security]
                 options:
                     - clean-up-repair
@@ -2197,8 +2153,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [privacy-security]
                 options:
                     - clean-up-repair
@@ -2246,8 +2201,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [privacy-security]
                 options:
                     - clean-up-repair
@@ -2295,8 +2249,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [privacy-security]
                 options:
                     - clean-up-repair
@@ -2344,8 +2297,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [privacy-security]
                 options:
                     - clean-up-repair
@@ -2397,8 +2349,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [files-folders]
                 options:
                     - clean-up-repair
@@ -2446,8 +2397,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [files-folders]
                 options:
                     - clean-up-repair
@@ -2495,8 +2445,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [files-folders]
                 options:
                     - clean-up-repair
@@ -2544,8 +2493,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [files-folders]
                 options:
                     - clean-up-repair
@@ -2593,8 +2541,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [files-folders]
                 options:
                     - clean-up-repair
@@ -2642,8 +2589,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [files-folders]
                 options:
                     - clean-up-repair
@@ -2691,8 +2637,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [files-folders]
                 options:
                     - clean-up-repair
@@ -2740,8 +2685,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [files-folders]
                 options:
                     - clean-up-repair
@@ -2789,8 +2733,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [files-folders]
                 options:
                     - clean-up-repair
@@ -2838,8 +2781,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [files-folders]
                 options:
                     - clean-up-repair
@@ -2887,8 +2829,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [files-folders]
                 options:
                     - clean-up-repair
@@ -2936,8 +2877,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [files-folders]
                 options:
                     - clean-up-repair
@@ -2985,8 +2925,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [files-folders]
                 options:
                     - clean-up-repair
@@ -3034,8 +2973,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [files-folders]
                 options:
                     - clean-up-repair
@@ -3083,8 +3021,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [files-folders]
                 options:
                     - clean-up-repair
@@ -3132,8 +3069,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [files-folders]
                 options:
                     - clean-up-repair
@@ -3185,8 +3121,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [system-tools]
                 options:
                     - clean-up-repair
@@ -3234,8 +3169,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [system-tools]
                 options:
                     - clean-up-repair
@@ -3283,8 +3217,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [system-tools]
                 options:
                     - clean-up-repair
@@ -3332,8 +3265,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [system-tools]
                 options:
                     - clean-up-repair
@@ -3381,8 +3313,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [system-tools]
                 options:
                     - clean-up-repair
@@ -3430,8 +3361,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [system-tools]
                 options:
                     - clean-up-repair
@@ -3479,8 +3409,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [system-tools]
                 options:
                     - clean-up-repair
@@ -3528,8 +3457,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [system-tools]
                 options:
                     - clean-up-repair
@@ -3577,8 +3505,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [system-tools]
                 options:
                     - clean-up-repair
@@ -3626,8 +3553,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [system-tools]
                 options:
                     - clean-up-repair
@@ -3675,8 +3601,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [system-tools]
                 options:
                     - clean-up-repair
@@ -3724,8 +3649,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [system-tools]
                 options:
                     - clean-up-repair
@@ -3773,8 +3697,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [system-tools]
                 options:
                     - clean-up-repair
@@ -3822,8 +3745,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [system-tools]
                 options:
                     - clean-up-repair
@@ -3871,8 +3793,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [system-tools]
                 options:
                     - clean-up-repair
@@ -3920,8 +3841,7 @@ content:
                 label: Categories
                 type: select
                 list: true
-                hidden: true
-                required: true
+                readonly: true
                 default: [system-tools]
                 options:
                     - clean-up-repair
@@ -3969,8 +3889,7 @@ content:
         label: Categories
         type: select
         list: true
-        hidden: true
-        required: true
+        readonly: true
         default: [windows-tips]
         options:
           - windows-tips
@@ -4014,8 +3933,7 @@ content:
         label: Categories
         type: select
         list: true
-        hidden: true
-        required: true
+        readonly: true
         default: [hardware]
         options:
           - hardware

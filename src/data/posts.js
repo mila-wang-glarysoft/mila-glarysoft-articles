@@ -265,8 +265,51 @@ marked.use({
   },
 });
 
+function escapeHtml(value = '') {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function parseShortcodeAttributes(value = '') {
+  const attributes = {};
+  const attributePattern = /([A-Za-z][\w-]*)\s*=\s*(?:"([^"]*)"|'([^']*)')/g;
+  let match;
+
+  while ((match = attributePattern.exec(value)) !== null) {
+    attributes[match[1]] = match[2] ?? match[3] ?? '';
+  }
+
+  return attributes;
+}
+
+function isSafeHref(value = '') {
+  return /^(https?:\/\/|mailto:|tel:|\/|#)/i.test(value.trim());
+}
+
+export function renderNofollowLinks(markdown = '') {
+  return markdown.replace(/::nofollow-link\{([^}\n]+)\}/g, (shortcode, rawAttributes) => {
+    const attributes = parseShortcodeAttributes(rawAttributes);
+    const url = (attributes.url || attributes.href || '').trim();
+    const text = attributes.text || attributes.label || url;
+    const shouldOpenNewTab = attributes.newTab !== 'false';
+
+    if (!url || !text || !isSafeHref(url)) return escapeHtml(text || shortcode);
+
+    const target = shouldOpenNewTab ? ' target="_blank"' : '';
+    const rel = shouldOpenNewTab
+      ? ' rel="nofollow noopener noreferrer"'
+      : ' rel="nofollow"';
+
+    return `<a href="${escapeHtml(url)}"${rel}${target}>${escapeHtml(text)}</a>`;
+  });
+}
+
 export function renderPostHtml(post) {
-  return marked.parse(post.body || '');
+  return marked.parse(renderNofollowLinks(post.body || ''));
 }
 
 export const posts = Object.entries(rawPostModules)

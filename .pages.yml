@@ -53,6 +53,14 @@ content:
             type: collection
             path: content/how-to/clean-up-repair/2026-07
             filename: "{primary}.md"
+            view:
+              fields: [title, author, date, draft]
+              primary: title
+              sort: [date, title]
+              search: [title, author, body]
+              default:
+                sort: date
+                order: desc
             fields:
               - name: defaultView
                 component: defaultView  

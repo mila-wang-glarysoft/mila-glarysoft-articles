@@ -49,7 +49,286 @@ components:
         sort: date
         order: desc
 content:
-  
+  - name: how_to
+    label: How To
+    type: group
+    items:
+      - name: how_to_clean_up_repair_months
+        label: Clean Up & Repair
+        type: group
+        items:
+          - name: how_to_clean_up_repair
+            label: 2026-07
+            type: collection
+            path: content/how-to/clean-up-repair/2026-07
+            filename: "{primary}.md"
+            fields:
+              - component: defaultView
+              - component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair              
+
+          - name: how_to_clean_up_repair_2026_06
+            label: 2026-06
+            type: collection
+            path: content/how-to/clean-up-repair/2026-06
+            filename: "{primary}.md"
+            fields:
+              - component: defaultView
+              - component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair
+
+          - name: how_to_clean_up_repair_2026_05
+            label: 2026-05
+            type: collection
+            path: content/how-to/clean-up-repair/2026-05
+            filename: "{primary}.md"
+            fields:
+              - component: defaultView
+              - component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair              
+
+          - name: how_to_clean_up_repair_2026_04
+            label: 2026-04
+            type: collection
+            path: content/how-to/clean-up-repair/2026-04
+            filename: "{primary}.md"
+            fields:
+              - component: defaultView
+              - component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair
+
+          - name: how_to_clean_up_repair_2026_03
+            label: 2026-03
+            type: collection
+            path: content/how-to/clean-up-repair/2026-03
+            filename: "{primary}.md"
+            fields:
+              - component: defaultView
+              - component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair
+
+          - name: how_to_clean_up_repair_2026_02
+            label: 2026-02
+            type: collection
+            path: content/how-to/clean-up-repair/2026-02
+            filename: "{primary}.md"
+            fields:
+              - component: defaultView
+              - component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair
+
+          - name: how_to_clean_up_repair_2026_01
+            label: 2026-01
+            type: collection
+            path: content/how-to/clean-up-repair/2026-01
+            filename: "{primary}.md"            
+            fields:
+              - component: defaultView
+              - component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair
+
+          - name: how_to_clean_up_repair_2025_12
+            label: 2025-12
+            type: collection
+            path: content/how-to/clean-up-repair/2025-12
+            filename: "{primary}.md"
+            fields:
+              - component: defaultView
+              - component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair
+
+          - name: how_to_clean_up_repair_2025_11
+            label: 2025-11
+            type: collection
+            path: content/how-to/clean-up-repair/2025-11
+            filename: "{primary}.md"
+            fields:
+              - component: defaultView
+              - component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair
+
+          - name: how_to_clean_up_repair_2025_10
+            label: 2025-10
+            type: collection
+            path: content/how-to/clean-up-repair/2025-10
+            filename: "{primary}.md"
+            fields:
+              - component: defaultView
+              - component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair
+
+          - name: how_to_clean_up_repair_2025_09
+            label: 2025-09
+            type: collection
+            path: content/how-to/clean-up-repair/2025-09
+            filename: "{primary}.md"
+            fields:
+              - component: defaultView
+              - component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair
+
+          - name: how_to_clean_up_repair_2025_08
+            label: 2025-08
+            type: collection
+            path: content/how-to/clean-up-repair/2025-08
+            filename: "{primary}.md"
+            fields:
+              - component: defaultView
+              - component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair
+
+          - name: how_to_clean_up_repair_2025_07
+            label: 2025-07
+            type: collection
+            path: content/how-to/clean-up-repair/2025-07
+            filename: "{primary}.md"
+            fields:
+              - component: defaultView
+              - component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair
+
+          - name: how_to_clean_up_repair_2025_06
+            label: 2025-06
+            type: collection
+            path: content/how-to/clean-up-repair/2025-06
+            filename: "{primary}.md"
+            fields:
+              - component: defaultView
+              - component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair
+
+          - name: how_to_clean_up_repair_2025_05
+            label: 2025-05
+            type: collection
+            path: content/how-to/clean-up-repair/2025-05
+            filename: "{primary}.md"
+            fields:
+              - component: defaultView
+              - component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair
+
+          - name: how_to_clean_up_repair_2025_04
+            label: 2025-04
+            type: collection
+            path: content/how-to/clean-up-repair/2025-04
+            filename: "{primary}.md"
+            fields:
+              - component: defaultView
+              - component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair
+
       - name: how_to_optimize_improve_months
         label: Optimize & Improve
         type: group

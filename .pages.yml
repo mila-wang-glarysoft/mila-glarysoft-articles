@@ -52,4 +52,24 @@ content:
   - name: how_to
     label: How To
     type: group
+    path: content/how-to/clean-up-repair/*-*    
+    items:
+      # 直接罗列各个子分类的 collection，不再嵌套多余的 group
+      - name: clean_up_repair
+        label: Clean Up & Repair
+        type: collection
+        # 使用 pattern 匹配该分类下所有年月文件夹
+        pattern: content/how-to/clean-up-repair/*-*
+        filename: "{primary}.md"
+        fields:
+          - component: defaultView
+          - component: defaultFields
+          - name: categories
+            label: Categories
+            type: select
+            required: true
+            default: clean-up-repair
+            options:
+              values:
+                - clean-up-repair
     

@@ -2,6 +2,52 @@ media:
   input: public/uploads
   output: /articles/uploads
 
+components:
+  defaultFields: 
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: categories
+        label: Categories
+        type: select
+        required: true
+        options:
+          values:
+            - # 注意：这里不再写死默认值，而是在具体的 collection 中覆盖
+      - name: author
+        label: Author
+        type: string
+      - name: date
+        label: Publish Date
+        type: date
+        required: true
+      - name: featured_image
+        label: Featured Image
+        type: image
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+      - name: nofollow_links
+        label: Nofollow external links
+        hidden: true
+        type: boolean
+        default: true
+      - name: body
+        label: Body
+        type: rich-text
+
+  defaultView:
+    view:
+      fields: [title, author, date, draft]
+      primary: title
+      sort: [date, title]
+      search: [title, author, body]
+      default:
+        sort: date
+        order: desc
 content:
   - name: how_to
     label: How To
@@ -11,24 +57,16 @@ content:
         label: Clean Up & Repair
         type: group
         items:
-          - name: how_to_clean_up_repair
-            label: 2026-08
+          # 只需为每个子分类定义一个 collection，并用 pattern 匹配其下所有月份文件夹
+          - name: clean_up_repair
+            label: Clean Up & Repair
             type: collection
-            path: content/how-to/clean-up-repair/2026-08
+            # 使用 pattern 匹配该分类下所有年份和月份的文件夹
+            pattern: content/how-to/clean-up-repair/*-*
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -37,813 +75,6 @@ content:
                 options:
                   values:
                     - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-                
-          - name: how_to_clean_up_repair_2026_07
-            label: 2026-07
-            type: collection
-            path: content/how-to/clean-up-repair/2026-07
-            filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-                
-          - name: how_to_clean_up_repair_2026_06
-            label: 2026-06
-            type: collection
-            path: content/how-to/clean-up-repair/2026-06
-            filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-
-          - name: how_to_clean_up_repair_2026_05
-            label: 2026-05
-            type: collection
-            path: content/how-to/clean-up-repair/2026-05
-            filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-
-          - name: how_to_clean_up_repair_2026_04
-            label: 2026-04
-            type: collection
-            path: content/how-to/clean-up-repair/2026-04
-            filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-
-          - name: how_to_clean_up_repair_2026_03
-            label: 2026-03
-            type: collection
-            path: content/how-to/clean-up-repair/2026-03
-            filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-
-          - name: how_to_clean_up_repair_2026_02
-            label: 2026-02
-            type: collection
-            path: content/how-to/clean-up-repair/2026-02
-            filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-
-          - name: how_to_clean_up_repair_2026_01
-            label: 2026-01
-            type: collection
-            path: content/how-to/clean-up-repair/2026-01
-            filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-
-          - name: how_to_clean_up_repair_2025_12
-            label: 2025-12
-            type: collection
-            path: content/how-to/clean-up-repair/2025-12
-            filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-
-          - name: how_to_clean_up_repair_2025_11
-            label: 2025-11
-            type: collection
-            path: content/how-to/clean-up-repair/2025-11
-            filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-
-          - name: how_to_clean_up_repair_2025_10
-            label: 2025-10
-            type: collection
-            path: content/how-to/clean-up-repair/2025-10
-            filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-
-          - name: how_to_clean_up_repair_2025_09
-            label: 2025-09
-            type: collection
-            path: content/how-to/clean-up-repair/2025-09
-            filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-
-          - name: how_to_clean_up_repair_2025_08
-            label: 2025-08
-            type: collection
-            path: content/how-to/clean-up-repair/2025-08
-            filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-
-          - name: how_to_clean_up_repair_2025_07
-            label: 2025-07
-            type: collection
-            path: content/how-to/clean-up-repair/2025-07
-            filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-
-          - name: how_to_clean_up_repair_2025_06
-            label: 2025-06
-            type: collection
-            path: content/how-to/clean-up-repair/2025-06
-            filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-
-          - name: how_to_clean_up_repair_2025_05
-            label: 2025-05
-            type: collection
-            path: content/how-to/clean-up-repair/2025-05
-            filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-
-          - name: how_to_clean_up_repair_2025_04
-            label: 2025-04
-            type: collection
-            path: content/how-to/clean-up-repair/2025-04
-            filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
-
       - name: how_to_optimize_improve_months
         label: Optimize & Improve
         type: group
@@ -853,19 +84,9 @@ content:
             type: collection
             path: content/how-to/optimize-improve/2026-07
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -874,47 +95,15 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_optimize_improve_2026_04
             label: 2026-04
             type: collection
             path: content/how-to/optimize-improve/2026-04
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -923,47 +112,15 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_optimize_improve_2026_03
             label: 2026-03
             type: collection
             path: content/how-to/optimize-improve/2026-03
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -972,47 +129,15 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_optimize_improve_2026_02
             label: 2026-02
             type: collection
             path: content/how-to/optimize-improve/2026-02
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1021,47 +146,15 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_optimize_improve_2026_01
             label: 2026-01
             type: collection
             path: content/how-to/optimize-improve/2026-01
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1070,47 +163,15 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_optimize_improve_2025_12
             label: 2025-12
             type: collection
             path: content/how-to/optimize-improve/2025-12
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1119,47 +180,15 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_optimize_improve_2025_11
             label: 2025-11
             type: collection
             path: content/how-to/optimize-improve/2025-11
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1168,47 +197,15 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_optimize_improve_2025_10
             label: 2025-10
             type: collection
             path: content/how-to/optimize-improve/2025-10
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1217,47 +214,15 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_optimize_improve_2025_09
             label: 2025-09
             type: collection
             path: content/how-to/optimize-improve/2025-09
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1266,47 +231,15 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_optimize_improve_2025_08
             label: 2025-08
             type: collection
             path: content/how-to/optimize-improve/2025-08
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1315,47 +248,15 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_optimize_improve_2025_07
             label: 2025-07
             type: collection
             path: content/how-to/optimize-improve/2025-07
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1364,47 +265,15 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_optimize_improve_2025_06
             label: 2025-06
             type: collection
             path: content/how-to/optimize-improve/2025-06
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1413,47 +282,15 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_optimize_improve_2025_05
             label: 2025-05
             type: collection
             path: content/how-to/optimize-improve/2025-05
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1462,47 +299,15 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_optimize_improve_2025_04
             label: 2025-04
             type: collection
             path: content/how-to/optimize-improve/2025-04
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1511,47 +316,15 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_optimize_improve_2024_06
             label: 2024-06
             type: collection
             path: content/how-to/optimize-improve/2024-06
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1560,47 +333,15 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_optimize_improve_2024_05
             label: 2024-05
             type: collection
             path: content/how-to/optimize-improve/2024-05
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1609,47 +350,15 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_optimize_improve_2024_04
             label: 2024-04
             type: collection
             path: content/how-to/optimize-improve/2024-04
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1658,28 +367,6 @@ content:
                 options:
                   values:
                     - optimize-improve
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
       - name: how_to_privacy_security_months
         label: Privacy & Security
@@ -1690,19 +377,9 @@ content:
             type: collection
             path: content/how-to/privacy-security/2026-07
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1711,47 +388,15 @@ content:
                 options:
                   values:
                     - privacy-security
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_privacy_security_2026_06
             label: 2026-06
             type: collection
             path: content/how-to/privacy-security/2026-06
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1760,47 +405,15 @@ content:
                 options:
                   values:
                     - privacy-security
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_privacy_security_2026_04
             label: 2026-04
             type: collection
             path: content/how-to/privacy-security/2026-04
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1809,47 +422,15 @@ content:
                 options:
                   values:
                     - privacy-security
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_privacy_security_2026_03
             label: 2026-03
             type: collection
             path: content/how-to/privacy-security/2026-03
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1858,47 +439,15 @@ content:
                 options:
                   values:
                     - privacy-security
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_privacy_security_2026_02
             label: 2026-02
             type: collection
             path: content/how-to/privacy-security/2026-02
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1907,47 +456,15 @@ content:
                 options:
                   values:
                     - privacy-security
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_privacy_security_2026_01
             label: 2026-01
             type: collection
             path: content/how-to/privacy-security/2026-01
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -1956,47 +473,15 @@ content:
                 options:
                   values:
                     - privacy-security
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_privacy_security_2025_12
             label: 2025-12
             type: collection
             path: content/how-to/privacy-security/2025-12
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2005,47 +490,15 @@ content:
                 options:
                   values:
                     - privacy-security
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_privacy_security_2025_11
             label: 2025-11
             type: collection
             path: content/how-to/privacy-security/2025-11
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2054,47 +507,15 @@ content:
                 options:
                   values:
                     - privacy-security
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_privacy_security_2025_10
             label: 2025-10
             type: collection
             path: content/how-to/privacy-security/2025-10
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2103,47 +524,15 @@ content:
                 options:
                   values:
                     - privacy-security
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_privacy_security_2025_09
             label: 2025-09
             type: collection
             path: content/how-to/privacy-security/2025-09
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2152,47 +541,15 @@ content:
                 options:
                   values:
                     - privacy-security
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_privacy_security_2025_08
             label: 2025-08
             type: collection
             path: content/how-to/privacy-security/2025-08
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2201,47 +558,15 @@ content:
                 options:
                   values:
                     - privacy-security
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_privacy_security_2025_07
             label: 2025-07
             type: collection
             path: content/how-to/privacy-security/2025-07
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2250,47 +575,15 @@ content:
                 options:
                   values:
                     - privacy-security
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_privacy_security_2025_06
             label: 2025-06
             type: collection
             path: content/how-to/privacy-security/2025-06
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2299,47 +592,15 @@ content:
                 options:
                   values:
                     - privacy-security
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_privacy_security_2025_05
             label: 2025-05
             type: collection
             path: content/how-to/privacy-security/2025-05
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2348,47 +609,15 @@ content:
                 options:
                   values:
                     - privacy-security
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_privacy_security_2025_04
             label: 2025-04
             type: collection
             path: content/how-to/privacy-security/2025-04
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2397,28 +626,6 @@ content:
                 options:
                   values:
                     - privacy-security
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
       - name: how_to_files_folders_months
         label: Files & Folders
@@ -2429,19 +636,9 @@ content:
             type: collection
             path: content/how-to/files-folders/2026-07
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2450,47 +647,15 @@ content:
                 options:
                   values:
                     - files-folders
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_files_folders_2026_06
             label: 2026-06
             type: collection
             path: content/how-to/files-folders/2026-06
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2499,47 +664,15 @@ content:
                 options:
                   values:
                     - files-folders
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_files_folders_2026_05
             label: 2026-05
             type: collection
             path: content/how-to/files-folders/2026-05
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2548,47 +681,15 @@ content:
                 options:
                   values:
                     - files-folders
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_files_folders_2026_04
             label: 2026-04
             type: collection
             path: content/how-to/files-folders/2026-04
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2597,47 +698,15 @@ content:
                 options:
                   values:
                     - files-folders
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_files_folders_2026_03
             label: 2026-03
             type: collection
             path: content/how-to/files-folders/2026-03
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2646,47 +715,15 @@ content:
                 options:
                   values:
                     - files-folders
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_files_folders_2026_02
             label: 2026-02
             type: collection
             path: content/how-to/files-folders/2026-02
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2695,47 +732,15 @@ content:
                 options:
                   values:
                     - files-folders
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_files_folders_2026_01
             label: 2026-01
             type: collection
             path: content/how-to/files-folders/2026-01
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2744,47 +749,15 @@ content:
                 options:
                   values:
                     - files-folders
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_files_folders_2025_12
             label: 2025-12
             type: collection
             path: content/how-to/files-folders/2025-12
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2793,47 +766,15 @@ content:
                 options:
                   values:
                     - files-folders
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_files_folders_2025_11
             label: 2025-11
             type: collection
             path: content/how-to/files-folders/2025-11
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2842,47 +783,15 @@ content:
                 options:
                   values:
                     - files-folders
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_files_folders_2025_10
             label: 2025-10
             type: collection
             path: content/how-to/files-folders/2025-10
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2891,47 +800,15 @@ content:
                 options:
                   values:
                     - files-folders
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_files_folders_2025_09
             label: 2025-09
             type: collection
             path: content/how-to/files-folders/2025-09
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2940,47 +817,15 @@ content:
                 options:
                   values:
                     - files-folders
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_files_folders_2025_08
             label: 2025-08
             type: collection
             path: content/how-to/files-folders/2025-08
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -2989,47 +834,15 @@ content:
                 options:
                   values:
                     - files-folders
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_files_folders_2025_07
             label: 2025-07
             type: collection
             path: content/how-to/files-folders/2025-07
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3038,47 +851,15 @@ content:
                 options:
                   values:
                     - files-folders
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_files_folders_2025_06
             label: 2025-06
             type: collection
             path: content/how-to/files-folders/2025-06
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3087,47 +868,15 @@ content:
                 options:
                   values:
                     - files-folders
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_files_folders_2025_05
             label: 2025-05
             type: collection
             path: content/how-to/files-folders/2025-05
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3136,47 +885,15 @@ content:
                 options:
                   values:
                     - files-folders
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_files_folders_2025_04
             label: 2025-04
             type: collection
             path: content/how-to/files-folders/2025-04
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3185,28 +902,6 @@ content:
                 options:
                   values:
                     - files-folders
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
       - name: how_to_system_tools_months
         label: System Tools
@@ -3217,19 +912,9 @@ content:
             type: collection
             path: content/how-to/system-tools/2026-07
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3238,47 +923,15 @@ content:
                 options:
                   values:
                     - system-tools
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_system_tools_2026_06
             label: 2026-06
             type: collection
             path: content/how-to/system-tools/2026-06
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3287,47 +940,15 @@ content:
                 options:
                   values:
                     - system-tools
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_system_tools_2026_05
             label: 2026-05
             type: collection
             path: content/how-to/system-tools/2026-05
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3336,47 +957,15 @@ content:
                 options:
                   values:
                     - system-tools
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_system_tools_2026_04
             label: 2026-04
             type: collection
             path: content/how-to/system-tools/2026-04
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3385,47 +974,15 @@ content:
                 options:
                   values:
                     - system-tools
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_system_tools_2026_03
             label: 2026-03
             type: collection
             path: content/how-to/system-tools/2026-03
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3434,47 +991,15 @@ content:
                 options:
                   values:
                     - system-tools
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_system_tools_2026_02
             label: 2026-02
             type: collection
             path: content/how-to/system-tools/2026-02
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3483,47 +1008,15 @@ content:
                 options:
                   values:
                     - system-tools
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_system_tools_2026_01
             label: 2026-01
             type: collection
             path: content/how-to/system-tools/2026-01
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3532,47 +1025,15 @@ content:
                 options:
                   values:
                     - system-tools
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_system_tools_2025_12
             label: 2025-12
             type: collection
             path: content/how-to/system-tools/2025-12
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3581,47 +1042,15 @@ content:
                 options:
                   values:
                     - system-tools
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_system_tools_2025_11
             label: 2025-11
             type: collection
             path: content/how-to/system-tools/2025-11
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3630,47 +1059,15 @@ content:
                 options:
                   values:
                     - system-tools
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_system_tools_2025_10
             label: 2025-10
             type: collection
             path: content/how-to/system-tools/2025-10
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3679,47 +1076,15 @@ content:
                 options:
                   values:
                     - system-tools
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_system_tools_2025_09
             label: 2025-09
             type: collection
             path: content/how-to/system-tools/2025-09
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3728,47 +1093,15 @@ content:
                 options:
                   values:
                     - system-tools
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_system_tools_2025_08
             label: 2025-08
             type: collection
             path: content/how-to/system-tools/2025-08
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3777,47 +1110,15 @@ content:
                 options:
                   values:
                     - system-tools
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_system_tools_2025_07
             label: 2025-07
             type: collection
             path: content/how-to/system-tools/2025-07
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3826,47 +1127,15 @@ content:
                 options:
                   values:
                     - system-tools
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_system_tools_2025_06
             label: 2025-06
             type: collection
             path: content/how-to/system-tools/2025-06
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3875,47 +1144,15 @@ content:
                 options:
                   values:
                     - system-tools
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_system_tools_2025_05
             label: 2025-05
             type: collection
             path: content/how-to/system-tools/2025-05
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3924,47 +1161,15 @@ content:
                 options:
                   values:
                     - system-tools
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
           - name: how_to_system_tools_2025_04
             label: 2025-04
             type: collection
             path: content/how-to/system-tools/2025-04
             filename: "{primary}.md"
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - component: defaultView
+              - component: defaultFields
               - name: categories
                 label: Categories
                 type: select
@@ -3973,47 +1178,15 @@ content:
                 options:
                   values:
                     - system-tools
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
 
   - name: windows_tips
     label: Windows Tips
     type: collection
     path: content/windows-tips
     filename: "{primary}.md"
-    view:
-      fields: [title, author, date, draft]
-      primary: title
-      sort: [date, title]
-      search: [title, author, body]
-      default:
-        sort: date
-        order: desc
     fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
+      - component: defaultView
+      - component: defaultFields
       - name: categories
         label: Categories
         type: select
@@ -4022,47 +1195,15 @@ content:
         options:
           values:
             - windows-tips
-      - name: author
-        label: Author
-        type: string
-      - name: date
-        label: Publish Date
-        type: date
-        required: true
-      - name: featured_image
-        label: Featured Image
-        type: image
-      - name: draft
-        label: Draft
-        type: boolean
-        default: false
-      - name: nofollow_links
-        label: Nofollow external links
-        hidden: true
-        type: boolean
-        default: true
-      - name: body
-        label: Body
-        type: rich-text
 
   - name: hardware
     label: Hardware
     type: collection
     path: content/hardware
     filename: "{primary}.md"
-    view:
-      fields: [title, author, date, draft]
-      primary: title
-      sort: [date, title]
-      search: [title, author, body]
-      default:
-        sort: date
-        order: desc
     fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
+      - component: defaultView
+      - component: defaultFields
       - name: categories
         label: Categories
         type: select
@@ -4071,25 +1212,3 @@ content:
         options:
           values:
             - hardware
-      - name: author
-        label: Author
-        type: string
-      - name: date
-        label: Publish Date
-        type: date
-        required: true
-      - name: featured_image
-        label: Featured Image
-        type: image
-      - name: draft
-        label: Draft
-        type: boolean
-        default: false
-      - name: nofollow_links
-        label: Nofollow external links
-        hidden: true
-        type: boolean
-        default: true
-      - name: body
-        label: Body
-        type: rich-text

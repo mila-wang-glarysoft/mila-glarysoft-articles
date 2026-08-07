@@ -1,6 +1,7 @@
 media:
   input: public/uploads
   output: /articles/uploads
+  
 components:
   defaultFields: 
     fields:

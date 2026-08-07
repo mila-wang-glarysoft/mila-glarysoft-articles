@@ -49,32 +49,7 @@ components:
         sort: date
         order: desc
 content:
-  - name: how_to
-    label: How To
-    type: group
-    items:
-      - name: how_to_clean_up_repair_months
-        label: Clean Up & Repair
-        type: group
-        items:
-          # 只需为每个子分类定义一个 collection，并用 pattern 匹配其下所有月份文件夹
-          - name: clean_up_repair
-            label: Clean Up & Repair
-            type: collection
-            # 使用 pattern 匹配该分类下所有年份和月份的文件夹
-            pattern: content/how-to/clean-up-repair/*-*
-            filename: "{primary}.md"
-            fields:
-              - component: defaultView
-              - component: defaultFields
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
+  
       - name: how_to_optimize_improve_months
         label: Optimize & Improve
         type: group

@@ -35,7 +35,9 @@ content:
                 sort: date
                 order: desc
             fields:
-              - components: defaultFields
+              - name: seo
+                component: seo
+                label: Meta
               - name: categories
                 label: Categories
                 type: select

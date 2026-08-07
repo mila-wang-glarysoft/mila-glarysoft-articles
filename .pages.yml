@@ -64,6 +64,8 @@ content:
             path: content/how-to/clean-up-repair/2026-07
             filename: "{primary}.md"
             fields:
+              - name: defaultView
+                component: defaultView  
               - name: defaultFields
                 component: defaultFields
               - name: categories

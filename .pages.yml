@@ -3,14 +3,41 @@ media:
   output: /articles/uploads
   
 components:
-  seo:
-    type: object
-    label: SEO
+  defaultFields:
     fields:
       - name: title
+        label: Title
         type: string
-      - name: description
-        type: text
+        required: true
+      - name: categories
+        label: Categories
+        type: select
+        required: true
+        options:
+          values:
+            - 
+      - name: author
+        label: Author
+        type: string
+      - name: date
+        label: Publish Date
+        type: date
+        required: true
+      - name: featured_image
+        label: Featured Image
+        type: image
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+      - name: nofollow_links
+        label: Nofollow external links
+        hidden: true
+        type: boolean
+        default: true
+      - name: body
+        label: Body
+        type: rich-text
         
 content:
   - name: how_to

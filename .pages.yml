@@ -62,7 +62,7 @@ content:
                 sort: date
                 order: desc
             fields:
-              - compononets: defaultFields
+              - components: defaultFields
               - name: categories
                 label: Categories
                 type: select

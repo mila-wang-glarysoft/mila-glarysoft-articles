@@ -62,8 +62,7 @@ content:
                 sort: date
                 order: desc
             fields:
-              - name: seo
-                component: seo
+              - component: defaultFields
                 label: Meta
               - name: categories
                 label: Categories

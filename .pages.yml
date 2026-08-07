@@ -37,17 +37,7 @@ components:
         default: true
       - name: body
         label: Body
-        type: rich-text
-
-  defaultView:
-    view:
-      fields: [title, author, date, draft]
-      primary: title
-      sort: [date, title]
-      search: [title, author, body]
-      default:
-        sort: date
-        order: desc
+        type: rich-text 
         
 content:
   - name: how_to
@@ -72,10 +62,7 @@ content:
                 sort: date
                 order: desc
             fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
+              - compononets: defaultFields
               - name: categories
                 label: Categories
                 type: select

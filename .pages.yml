@@ -1,44 +1,6 @@
 media:
   input: public/uploads
   output: /articles/uploads
-
-components:
-  defaultFields: 
-    fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: categories
-        label: Categories
-        type: select
-        required: true
-        options:
-          values:
-            - # 注意：这里不再写死默认值，而是在具体的 collection 中覆盖
-      - name: author
-        label: Author
-        type: string
-      - name: date
-        label: Publish Date
-        type: date
-        required: true
-      - name: featured_image
-        label: Featured Image
-        type: image
-      - name: draft
-        label: Draft
-        type: boolean
-        default: false
-      - name: nofollow_links
-        label: Nofollow external links
-        hidden: true
-        type: boolean
-        default: true
-      - name: body
-        label: Body
-        type: rich-text
-
   
 content:
   - name: how_to
@@ -54,9 +16,19 @@ content:
             type: collection
             path: content/how-to/clean-up-repair/2026-07
             filename: "{primary}.md"
+            view:
+              fields: [title, author, date, draft]
+              primary: title
+              sort: [date, title]
+              search: [title, author, body]
+              default:
+                sort: date
+                order: desc
             fields:
-              - component: defaultView
-              - component: defaultFields
+              - name: title
+                label: Title
+                type: string
+                required: true
               - name: categories
                 label: Categories
                 type: select
@@ -64,7 +36,29 @@ content:
                 default: clean-up-repair
                 options:
                   values:
-                    - clean-up-repair              
+                    - clean-up-repair
+              - name: author
+                label: Author
+                type: string
+              - name: date
+                label: Publish Date
+                type: date
+                required: true
+              - name: featured_image
+                label: Featured Image
+                type: image
+              - name: draft
+                label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
+                hidden: true
+                type: boolean
+                default: true
+              - name: body
+                label: Body
+                type: rich-text            
 
           - name: how_to_clean_up_repair_2026_06
             label: 2026-06

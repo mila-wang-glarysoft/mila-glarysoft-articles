@@ -62,7 +62,7 @@ content:
                 sort: date
                 order: desc
             fields:
-              - component: defaultView  
+              - components: defaultView  
               - name: defaultFields
                 component: defaultFields
               - name: categories

@@ -1599,9 +1599,9 @@ content:
     filename: "{primary}.md"
     fields:
       - name: defaultView
-                component: defaultView 
+        component: defaultView 
       - name: defaultFields
-                component: defaultFields
+        component: defaultFields
       - name: categories
         label: Categories
         type: select
@@ -1618,9 +1618,9 @@ content:
     filename: "{primary}.md"
     fields:
       - name: defaultView
-                component: defaultView 
+        component: defaultView 
       - name: defaultFields
-                component: defaultFields
+        component: defaultFields
       - name: categories
         label: Categories
         type: select

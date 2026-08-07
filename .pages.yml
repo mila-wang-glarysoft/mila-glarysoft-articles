@@ -61,7 +61,18 @@ content:
               default:
                 sort: date
                 order: desc
-            - component: defaultFields             
+            fields:
+              - component: defaultFields  
+              - name: defaultFields
+                component: defaultFields
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair              
 
           - name: how_to_clean_up_repair_2026_06
             label: 2026-06

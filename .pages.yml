@@ -39,16 +39,6 @@ components:
         label: Body
         type: rich-text
 
-  defaultView:
-    view:
-      fields: [title, author, date, draft]
-      primary: title
-      sort: [date, title]
-      search: [title, author, body]
-      default:
-        sort: date
-        order: desc
-
 content:
   - name: how_to
     label: How To

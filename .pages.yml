@@ -52,7 +52,7 @@ content:
   - name: how_to
     label: How To
     type: group
-    path: content/how-to/clean-up-repair/*-*    
+    path: content/how-to/clean-up-repair/
     items:
       # 直接罗列各个子分类的 collection，不再嵌套多余的 group
       - name: clean_up_repair

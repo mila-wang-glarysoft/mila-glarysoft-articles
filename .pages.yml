@@ -62,8 +62,7 @@ content:
             sort: date
             order: desc
         fields:
-          # ✅ 正确引用组件：直接使用 - component: defaultFields
-          - component: defaultFields
+          # ✅ 正确引用组件：直接使用 - component: defaultFields          
           - name: categories
             label: Categories
             type: select

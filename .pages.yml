@@ -40,19 +40,15 @@ components:
         type: rich-text
 
 content:
-  # 1. 重构 how_to group
   - name: how_to
     label: How To
     type: group
     items:
-      # 注意：每个子分类都作为 items 数组的一个元素
       - name: clean_up_repair
         label: Clean Up & Repair
         type: collection
-        # ✅ 使用 pattern 动态匹配所有月份文件夹
-        pattern: content/how-to/clean-up-repair/*-*
+        path: content/how-to/clean-up-repair/2026-04
         filename: "{primary}.md"
-        # ✅ view 属性放在 collection 顶层
         view:
           fields: [title, author, date, draft]
           primary: title
@@ -62,7 +58,6 @@ content:
             sort: date
             order: desc
         fields:
-          # ✅ 正确引用组件：直接使用 - component: defaultFields          
           - name: categories
             label: Categories
             type: select

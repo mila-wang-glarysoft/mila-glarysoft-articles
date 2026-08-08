@@ -32,15 +32,7 @@ content:
             path: content/how-to/clean-up-repair
             filename:
               template: "{year}-{month}/{primary}.md"
-              field: create
-            view:
-              fields: [title, author, date, draft]
-              primary: title
-              sort: [date, title]
-              search: [title, author, body]
-              default:
-                sort: date
-                order: desc
+              field: create            
             fields:
               - name: title
                 label: Title

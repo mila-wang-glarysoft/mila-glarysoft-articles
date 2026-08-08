@@ -30,7 +30,9 @@ content:
             label: New File
             type: file
             path: content/how-to/clean-up-repair
-            filename: "{primary}.md"
+            filename:
+              template: "{year}-{month}/{primary}.md"
+              field: create
             view:
               fields: [title, author, date, draft]
               primary: title

@@ -35,11 +35,16 @@ jobs:
           CREATED=false
 
           for CATEGORY in "${CATEGORIES[@]}"; do
+            # 确保基础目录存在，并创建 .gitkeep 防止被 Git 忽略
             mkdir -p "$CATEGORY"
+            touch "$CATEGORY/.gitkeep"
+
             TARGET_DIR="${CATEGORY}/${YEAR_MONTH}"
             if [ ! -d "$TARGET_DIR" ]; then
               echo "创建目录: $TARGET_DIR"
               mkdir -p "$TARGET_DIR"
+              # 🔑 关键修复：在月份目录中创建 .gitkeep 文件
+              touch "$TARGET_DIR/.gitkeep"
               CREATED=true
             else
               echo "目录已存在: $TARGET_DIR"
@@ -53,7 +58,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # 关键修复：有变更才提交，无变更则跳过
+          # 添加所有变更，包括新文件
+          git add .
+          # 检查是否有变更需要提交
           if git diff --staged --quiet; then
             echo "没有新的变更需要提交"
           else

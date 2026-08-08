@@ -14,7 +14,7 @@ content:
           - name: how_to_clean_up_repair
             label: 2026-07
             type: collection
-            path: content/how-to/clean-up-repair/2026-07
+            path: content/how-to/clean-up-repair/{year}-{month}
             filename: "{primary}.md"
             view:
               fields: [title, author, date, draft]

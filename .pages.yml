@@ -3,11 +3,11 @@ media:
   output: /articles/uploads
 
 content:
-  - name: posts
-    label: Posts
+  - name: test
+    label: Test
     type: collection
     path: content/posts
-    filename: "{year}-{month}/{day}-{slug}/index.md"
+    filename: "{year}-{month}-{slug}/index.md"
     fields:
       - { name: title, label: 标题, type: string }
       - { name: date, label: 日期, type: date, default: "{{now}}" }

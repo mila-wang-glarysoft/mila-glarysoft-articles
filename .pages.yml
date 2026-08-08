@@ -4,7 +4,7 @@ media:
 
 content:
   - name: posts
-    label: 文章
+    label: Posts
     type: collection
     path: content/posts
     filename: "{year}-{month}/{day}-{slug}/index.md"

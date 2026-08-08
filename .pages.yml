@@ -26,8 +26,8 @@ content:
                 workflow: pages-cms-file-action.yml
                 
           
-          - name: how_to_clean_up_repair
-            label: 2026-07
+          - name: new
+            label: New File
             type: collection
             path: content/how-to/clean-up-repair/2026-07
             filename: "{primary}.md"

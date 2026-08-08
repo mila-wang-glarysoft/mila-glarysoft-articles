@@ -1,10 +1,12 @@
-
 name: 自动创建每月文件夹
 
 on:
-  push:
-    branches:
-      - main
+  # 定时触发：每天北京时间早上 8 点运行一次
+  schedule:
+    - cron: '0 0 * * *'  # UTC 0:00 = 北京时间 21:20
+  
+  # 也支持手动触发，方便测试
+  workflow_dispatch:
 
 jobs:
   create-folder:
@@ -20,29 +22,37 @@ jobs:
         id: date
         run: |
           echo "year_month=$(date +'%Y-%m')" >> $GITHUB_OUTPUT
+          echo "year=$(date +'%Y')" >> $GITHUB_OUTPUT
+          echo "month=$(date +'%m')" >> $GITHUB_OUTPUT
 
-      - name: 检查并创建文件夹
+      - name: 创建所有分类的当月文件夹
         env:
-          FOLDER_NAME: ${{ steps.date.outputs.year_month }}
+          YEAR_MONTH: ${{ steps.date.outputs.year_month }}
         run: |
-          # 根据需要修改这里的路径
-          TARGET_DIRS=(
-            "content/how-to/clean-up-repair/${FOLDER_NAME}"
-            "content/how-to/optimize-improve/${FOLDER_NAME}"
-            "content/how-to/privacy-security/${FOLDER_NAME}"
-            "content/how-to/files-folders/${FOLDER_NAME}"
+          # 定义所有需要创建月份文件夹的分类路径
+          CATEGORIES=(
+            "content/how-to/clean-up-repair"
+            "content/how-to/optimize-improve"
+            "content/how-to/privacy-security"
+            "content/how-to/files-folders"
+            "content/how-to/system-tools"
           )
-          for dir in "${TARGET_DIRS[@]}"; do
-            mkdir -p "$dir"
+          
+          FOLDER_CREATED=false
+          
+          for CATEGORY in "${CATEGORIES[@]}"; do
+            TARGET_DIR="${CATEGORY}/${YEAR_MONTH}"
+            if [ ! -d "$TARGET_DIR" ]; then
+              echo "创建目录: $TARGET_DIR"
+              mkdir -p "$TARGET_DIR"
+              FOLDER_CREATED=true
+            else
+              echo "目录已存在: $TARGET_DIR"
+            fi
           done
           
-          if [ ! -d "$TARGET_DIR" ]; then
-            echo "目录 $TARGET_DIR 不存在，正在创建..."
-            mkdir -p "$TARGET_DIR"
+          if [ "$FOLDER_CREATED" = true ]; then
             echo "FOLDER_CREATED=true" >> $GITHUB_ENV
-          else
-            echo "目录 $TARGET_DIR 已存在，无需创建。"
-            echo "FOLDER_CREATED=false" >> $GITHUB_ENV
           fi
 
       - name: 提交并推送新文件夹
@@ -51,5 +61,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "自动创建当月文件夹: ${{ steps.date.outputs.year_month }}"
+          git commit -m "自动创建 $(date +'%Y年%m月') 文件夹"
           git push

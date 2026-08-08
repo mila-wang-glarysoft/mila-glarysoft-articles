@@ -37,7 +37,28 @@ content:
                 options:
                   values:
                     - clean-up-repair
-              # ... 其他字段 ...
+              - name: author
+                label: Author
+                type: string
+              - name: date
+                label: Publish Date
+                type: date
+                required: true
+              - name: featured_image
+                label: Featured Image
+                type: image
+              - name: draft
+                label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
+                hidden: true
+                type: boolean
+                default: true
+              - name: body
+                label: Body
+                type: rich-text
 
       - name: how_to_optimize_improve_months
         label: Optimize & Improve

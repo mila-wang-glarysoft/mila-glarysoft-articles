@@ -24,7 +24,6 @@ jobs:
       - name: 检查并创建文件夹
         id: create
         run: |
-          # 定义所有需要创建月份文件夹的分类路径
           CATEGORIES=(
             "content/how-to/clean-up-repair"
             "content/how-to/optimize-improve"
@@ -36,9 +35,7 @@ jobs:
           CREATED=false
 
           for CATEGORY in "${CATEGORIES[@]}"; do
-            # 确保基础分类目录存在
             mkdir -p "$CATEGORY"
-
             TARGET_DIR="${CATEGORY}/${YEAR_MONTH}"
             if [ ! -d "$TARGET_DIR" ]; then
               echo "创建目录: $TARGET_DIR"
@@ -49,7 +46,6 @@ jobs:
             fi
           done
 
-          # 通过 GITHUB_OUTPUT 设置输出变量
           echo "folder_created=${CREATED}" >> $GITHUB_OUTPUT
 
       - name: 提交并推送新文件夹
@@ -57,6 +53,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "自动创建 $(date +'%Y年%m月') 文件夹"
-          git push
+          # 关键修复：有变更才提交，无变更则跳过
+          if git diff --staged --quiet; then
+            echo "没有新的变更需要提交"
+          else
+            git commit -m "自动创建 $(date +'%Y年%m月') 文件夹"
+            git push
+          fi

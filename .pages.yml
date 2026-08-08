@@ -11,8 +11,8 @@ content:
         label: Clean Up & Repair
         type: group
         items:
-          - name: how_to_clean_up_repair
-            label: 2026-07
+          - name: new_file
+            label: New File
             type: collection
             path: content/how-to/clean-up-repair/2026-07
             filename: "{primary}.md"

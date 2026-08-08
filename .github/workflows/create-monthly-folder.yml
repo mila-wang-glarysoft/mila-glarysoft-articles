@@ -44,7 +44,6 @@ jobs:
               echo "创建目录: $TARGET_DIR"
               mkdir -p "$TARGET_DIR"
               # 🔑 关键修复：在月份目录中创建 .gitkeep 文件
-              touch "$TARGET_DIR/.gitkeep"
               CREATED=true
             else
               echo "目录已存在: $TARGET_DIR"

@@ -1,7 +1,7 @@
 media:
   input: public/uploads
   output: /articles/uploads
-  
+
 content:
   - name: posts
     label: 文章
@@ -15,7 +15,7 @@ content:
       # 增加一个日期字段，供用户选择
       - { name: date, label: 日期, type: date, default: "{{now}}" }
       - { name: body, label: 正文, type: rich-text }
-content:
+      
   - name: how_to
     label: How To
     type: group

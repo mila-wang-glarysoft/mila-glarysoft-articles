@@ -2,19 +2,7 @@ media:
   input: public/uploads
   output: /articles/uploads
 
-content: 
-  - name: posts
-    label: 文章
-    type: collection
-    path: content/posts
-    # 使用对象形式，明确控制文件名输入框
-    filename:
-      template: "{year}-{month}/{day}-{slug}/index.md"
-      field: create   # 仅在创建新文章时显示文件名输入框
-    fields:
-      - { name: title, label: 标题, type: string }
-      - { name: date, label: 日期, type: date, default: "{{now}}" }
-      - { name: body, label: 正文, type: rich-text }
+content:
   - name: how_to
     label: How To
     type: group
@@ -27,7 +15,7 @@ content:
             label: 2026-07
             type: collection
             path: content/how-to/clean-up-repair/2026-07
-            filename: "{year}-{month}/index.md"
+            filename: "{primary}.md"
             view:
               fields: [title, author, date, draft]
               primary: title

@@ -26,7 +26,15 @@ jobs:
           FOLDER_NAME: ${{ steps.date.outputs.year_month }}
         run: |
           # 根据需要修改这里的路径
-          TARGET_DIR="content/how-to/clean-up-repair/${FOLDER_NAME}"
+          TARGET_DIRS=(
+            "content/how-to/clean-up-repair/${FOLDER_NAME}"
+            "content/how-to/optimize-improve/${FOLDER_NAME}"
+            "content/how-to/privacy-security/${FOLDER_NAME}"
+            "content/how-to/files-folders/${FOLDER_NAME}"
+          )
+          for dir in "${TARGET_DIRS[@]}"; do
+            mkdir -p "$dir"
+          done
           
           if [ ! -d "$TARGET_DIR" ]; then
             echo "目录 $TARGET_DIR 不存在，正在创建..."

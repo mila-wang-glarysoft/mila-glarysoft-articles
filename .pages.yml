@@ -11,12 +11,10 @@ content:
         label: Clean Up & Repair
         type: group
         items:
-          - name: how_to_clean_up_repair # 一个统一的集合名称
-            label: Clean Up & Repair    # 在 CMS 中显示的名称
+          - name: how_to_clean_up_repair 
+            label: Clean Up & Repair  
             type: collection
-            # 关键步骤 1：使用 {year} 和 {month} 占位符动态生成路径
             path: content/how-to/clean-up-repair/{year}-{month}
-            # 关键步骤 2：定义文件名格式，{primary} 通常是标题
             filename: "{primary}.md"
             view:
               fields: [title, author, date, draft]
@@ -27,7 +25,6 @@ content:
                 sort: date
                 order: desc
             fields:
-              # ... 你的字段配置保持不变 ...
               - name: title
                 label: Title
                 type: string

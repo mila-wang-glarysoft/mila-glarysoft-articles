@@ -1,11 +1,8 @@
 name: 自动创建每月文件夹
 
 on:
-  # 定时触发：每天北京时间早上 8 点运行一次
   schedule:
-    - cron: '0 0 * * *'  # UTC 0:00 = 北京时间 21:20
-  
-  # 也支持手动触发，方便测试
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
@@ -22,14 +19,12 @@ jobs:
         id: date
         run: |
           echo "year_month=$(date +'%Y-%m')" >> $GITHUB_OUTPUT
-          echo "year=$(date +'%Y')" >> $GITHUB_OUTPUT
-          echo "month=$(date +'%m')" >> $GITHUB_OUTPUT
 
-      - name: 创建所有分类的当月文件夹
+      - name: 检查并创建文件夹
+        id: create
         env:
           YEAR_MONTH: ${{ steps.date.outputs.year_month }}
         run: |
-          # 定义所有需要创建月份文件夹的分类路径
           CATEGORIES=(
             "content/how-to/clean-up-repair"
             "content/how-to/optimize-improve"
@@ -38,25 +33,25 @@ jobs:
             "content/how-to/system-tools"
           )
           
-          FOLDER_CREATED=false
+          CREATED=false
           
           for CATEGORY in "${CATEGORIES[@]}"; do
             TARGET_DIR="${CATEGORY}/${YEAR_MONTH}"
             if [ ! -d "$TARGET_DIR" ]; then
               echo "创建目录: $TARGET_DIR"
               mkdir -p "$TARGET_DIR"
-              FOLDER_CREATED=true
+              CREATED=true
             else
               echo "目录已存在: $TARGET_DIR"
             fi
           done
           
-          if [ "$FOLDER_CREATED" = true ]; then
-            echo "FOLDER_CREATED=true" >> $GITHUB_ENV
-          fi
+          # 关键修复：通过 GITHUB_OUTPUT 输出变量，而不是 GITHUB_ENV
+          echo "folder_created=${CREATED}" >> $GITHUB_OUTPUT
 
       - name: 提交并推送新文件夹
-        if: env.FOLDER_CREATED == 'true'
+        # 关键修复：使用 steps.create.outputs.folder_created 来判断
+        if: steps.create.outputs.folder_created == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

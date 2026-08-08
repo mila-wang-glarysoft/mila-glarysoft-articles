@@ -1,1 +1,47 @@
 
+name: 自动创建每月文件夹
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-folder:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 获取当前年月
+        id: date
+        run: |
+          echo "year_month=$(date +'%Y-%m')" >> $GITHUB_OUTPUT
+
+      - name: 检查并创建文件夹
+        env:
+          FOLDER_NAME: ${{ steps.date.outputs.year_month }}
+        run: |
+          # 根据需要修改这里的路径
+          TARGET_DIR="content/how-to/clean-up-repair/${FOLDER_NAME}"
+          
+          if [ ! -d "$TARGET_DIR" ]; then
+            echo "目录 $TARGET_DIR 不存在，正在创建..."
+            mkdir -p "$TARGET_DIR"
+            echo "FOLDER_CREATED=true" >> $GITHUB_ENV
+          else
+            echo "目录 $TARGET_DIR 已存在，无需创建。"
+            echo "FOLDER_CREATED=false" >> $GITHUB_ENV
+          fi
+
+      - name: 提交并推送新文件夹
+        if: env.FOLDER_CREATED == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "自动创建当月文件夹: ${{ steps.date.outputs.year_month }}"
+          git push

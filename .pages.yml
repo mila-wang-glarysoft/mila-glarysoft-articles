@@ -28,8 +28,8 @@ content:
           
           - name: new
             label: New File
-            type: collection
-            path: content/how-to/clean-up-repair/2026-07
+            type: file
+            path: content/how-to/clean-up-repair
             filename: "{primary}.md"
             view:
               fields: [title, author, date, draft]

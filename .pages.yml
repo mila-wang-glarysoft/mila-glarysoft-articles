@@ -10,22 +10,7 @@ content:
       - name: how_to_clean_up_repair_months
         label: Clean Up & Repair
         type: group
-        items:
-          - name: site
-            label: Site settings
-            type: file
-            path: data/site.yml
-            fields:
-              - name: title
-                type: string
-              - name: description
-                type: text
-            actions:
-              - name: validate-config
-                label: Validate config
-                workflow: pages-cms-file-action.yml
-                
-          
+        items:  
           - name: new
             label: New File
             type: file

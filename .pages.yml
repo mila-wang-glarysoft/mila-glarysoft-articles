@@ -13,7 +13,7 @@ content:
         items:
           - name: new_file
             label: New File
-            type: collection
+            type: file
             path: content/how-to/clean-up-repair
             filename: "{year}-{month}/{primary}.md"
             view:

@@ -18,12 +18,10 @@ jobs:
       - name: 获取当前年月
         id: date
         run: |
-          echo "year_month=$(date +'%Y-%m')" >> $GITHUB_OUTPUT
+          echo "YEAR_MONTH=$(date +'%Y-%m')" >> $GITHUB_ENV
 
       - name: 检查并创建文件夹
         id: create
-        env:
-          YEAR_MONTH: ${{ steps.date.outputs.year_month }}
         run: |
           # 定义需要创建月份子文件夹的基础路径
           CATEGORIES=(
@@ -37,7 +35,7 @@ jobs:
           CREATED=false
 
           for CATEGORY in "${CATEGORIES[@]}"; do
-            # 先确保基础分类目录存在
+            # 确保基础分类目录存在
             mkdir -p "$CATEGORY"
 
             TARGET_DIR="${CATEGORY}/${YEAR_MONTH}"
@@ -50,18 +48,14 @@ jobs:
             fi
           done
 
-          # 使用更兼容的方式设置输出变量
-          if [ "$CREATED" = true ]; then
-            echo "::set-output name=folder_created::true"
-          else
-            echo "::set-output name=folder_created::false"
-          fi
+          # 通过 GITHUB_OUTPUT 设置输出变量 (新语法)
+          echo "folder_created=${CREATED}" >> $GITHUB_OUTPUT
 
       - name: 提交并推送新文件夹
         if: steps.create.outputs.folder_created == 'true'
         run: |
           git config user.name "github-actions[bot]"
-          git config.user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "自动创建 $(date +'%Y年%m月') 文件夹"
           git push

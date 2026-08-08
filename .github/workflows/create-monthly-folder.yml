@@ -25,6 +25,7 @@ jobs:
         env:
           YEAR_MONTH: ${{ steps.date.outputs.year_month }}
         run: |
+          # 定义需要创建月份子文件夹的基础路径
           CATEGORIES=(
             "content/how-to/clean-up-repair"
             "content/how-to/optimize-improve"
@@ -32,10 +33,13 @@ jobs:
             "content/how-to/files-folders"
             "content/how-to/system-tools"
           )
-          
+
           CREATED=false
-          
+
           for CATEGORY in "${CATEGORIES[@]}"; do
+            # 先确保基础分类目录存在
+            mkdir -p "$CATEGORY"
+
             TARGET_DIR="${CATEGORY}/${YEAR_MONTH}"
             if [ ! -d "$TARGET_DIR" ]; then
               echo "创建目录: $TARGET_DIR"
@@ -45,16 +49,19 @@ jobs:
               echo "目录已存在: $TARGET_DIR"
             fi
           done
-          
-          # 关键修复：通过 GITHUB_OUTPUT 输出变量，而不是 GITHUB_ENV
-          echo "folder_created=${CREATED}" >> $GITHUB_OUTPUT
+
+          # 使用更兼容的方式设置输出变量
+          if [ "$CREATED" = true ]; then
+            echo "::set-output name=folder_created::true"
+          else
+            echo "::set-output name=folder_created::false"
+          fi
 
       - name: 提交并推送新文件夹
-        # 关键修复：使用 steps.create.outputs.folder_created 来判断
         if: steps.create.outputs.folder_created == 'true'
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config.user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "自动创建 $(date +'%Y年%m月') 文件夹"
           git push

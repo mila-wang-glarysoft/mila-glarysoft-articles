@@ -18,41 +18,7 @@ content:
             filename:
               template: "{year}-{month}/{primary}.md"
               field: create            
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: categories
-                label: Categories
-                type: select
-                required: true
-                default: clean-up-repair
-                options:
-                  values:
-                    - clean-up-repair
-              - name: author
-                label: Author
-                type: string
-              - name: date
-                label: Publish Date
-                type: date
-                required: true
-              - name: featured_image
-                label: Featured Image
-                type: image
-              - name: draft
-                label: Draft
-                type: boolean
-                default: false
-              - name: nofollow_links
-                label: Nofollow external links
-                hidden: true
-                type: boolean
-                default: true
-              - name: body
-                label: Body
-                type: rich-text
+            
 
           - name: how_to_clean_up_repair_2026_06
             label: 2026-06

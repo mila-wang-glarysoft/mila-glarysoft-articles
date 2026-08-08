@@ -6,13 +6,10 @@ content:
   - name: posts
     label: 文章
     type: collection
-    # 指定文章存放的根目录
     path: content/posts
-    # 这是关键：定义了文件夹和文件的生成规则
     filename: "{year}-{month}/{day}-{slug}/index.md"
     fields:
       - { name: title, label: 标题, type: string }
-      # 增加一个日期字段，供用户选择
       - { name: date, label: 日期, type: date, default: "{{now}}" }
       - { name: body, label: 正文, type: rich-text }
       

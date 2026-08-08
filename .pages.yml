@@ -6,7 +6,7 @@ content:
   - name: test
     label: Test
     type: collection
-    path: content/posts/test/
+    path: content/test/
     filename: "{year}-{month}-{slug}/index.md"
     fields:
       - name: title

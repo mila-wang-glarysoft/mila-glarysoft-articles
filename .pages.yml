@@ -16,7 +16,6 @@ content:
             type: file
             path: content/how-to/clean-up-repair
             filename: "{year}-{month}/{primary}.md"
-            field: create
             view:
               fields: [title, author, date, draft]
               primary: title

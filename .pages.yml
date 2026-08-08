@@ -24,6 +24,7 @@ content:
               - name: validate-config
                 label: Validate config
                 workflow: pages-cms-file-action.yml
+                
           - name: new_file
             label: New File
             type: file

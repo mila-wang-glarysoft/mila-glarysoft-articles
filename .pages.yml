@@ -2,7 +2,19 @@ media:
   input: public/uploads
   output: /articles/uploads
 
-content:  
+content: 
+  - name: posts
+    label: 文章
+    type: collection
+    path: content/posts
+    # 使用对象形式，明确控制文件名输入框
+    filename:
+      template: "{year}-{month}/{day}-{slug}/index.md"
+      field: create   # 仅在创建新文章时显示文件名输入框
+    fields:
+      - { name: title, label: 标题, type: string }
+      - { name: date, label: 日期, type: date, default: "{{now}}" }
+      - { name: body, label: 正文, type: rich-text }
   - name: how_to
     label: How To
     type: group

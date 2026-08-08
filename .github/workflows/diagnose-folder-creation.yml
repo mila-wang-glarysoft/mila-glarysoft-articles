@@ -1,0 +1,61 @@
+name: 诊断文件夹创建
+
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 1. 打印当前目录结构（调试）
+        run: |
+          echo "当前工作目录："
+          pwd
+          echo "列出 content 目录内容（如果存在）："
+          ls -la content/ || echo "content 目录不存在"
+
+      - name: 2. 获取并打印当前年月
+        id: date
+        run: |
+          YEAR_MONTH=$(date +'%Y-%m')
+          echo "当前年月是: $YEAR_MONTH"
+          echo "YEAR_MONTH=$YEAR_MONTH" >> $GITHUB_ENV
+
+      - name: 3. 尝试创建文件夹
+        id: create
+        run: |
+          CATEGORIES=(
+            "content/how-to/clean-up-repair"
+          )
+          CREATED=false
+          for CATEGORY in "${CATEGORIES[@]}"; do
+            echo "--- 处理分类: $CATEGORY ---"
+            echo "尝试创建基础目录: $CATEGORY"
+            mkdir -v -p "$CATEGORY"
+            TARGET_DIR="${CATEGORY}/${YEAR_MONTH}"
+            echo "目标月份目录: $TARGET_DIR"
+            if [ ! -d "$TARGET_DIR" ]; then
+              echo "目录不存在，正在创建..."
+              mkdir -v -p "$TARGET_DIR"
+              CREATED=true
+            else
+              echo "目录已存在。"
+            fi
+          done
+          echo "folder_created=${CREATED}" >> $GITHUB_OUTPUT
+          echo "诊断脚本执行完毕。"
+
+      - name: 4. 提交更改（如果有新文件夹）
+        if: steps.create.outputs.folder_created == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "诊断：自动创建文件夹"
+          git push

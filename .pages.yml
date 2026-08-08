@@ -15,7 +15,7 @@ content:
             label: New File
             type: collection
             path: content/how-to/clean-up-repair
-            filename: "{primary}.md"
+            filename: "{year}-{month}/{primary}.md"
             view:
               fields: [title, author, date, draft]
               primary: title

@@ -10,8 +10,8 @@ content:
       - name: how_to_clean_up_repair
         label: Clean Up & Repair
         type: collection
-        path: content/how-to/clean-up-repair/{year}-{month}
-        filename: "{primary}.md"
+        path: content/how-to/clean-up-repair  # 保持静态路径
+        filename: "{year}-{month}/{primary}.md"  # 在文件名中创建子路径
         view:
           fields: [title, author, date, draft]
           primary: title

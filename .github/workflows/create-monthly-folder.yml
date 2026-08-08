@@ -18,12 +18,13 @@ jobs:
       - name: 获取当前年月
         id: date
         run: |
-          echo "YEAR_MONTH=$(date +'%Y-%m')" >> $GITHUB_ENV
+          YEAR_MONTH=$(date +'%Y-%m')
+          echo "YEAR_MONTH=$YEAR_MONTH" >> $GITHUB_ENV
 
       - name: 检查并创建文件夹
         id: create
         run: |
-          # 定义需要创建月份子文件夹的基础路径
+          # 定义所有需要创建月份文件夹的分类路径
           CATEGORIES=(
             "content/how-to/clean-up-repair"
             "content/how-to/optimize-improve"
@@ -48,7 +49,7 @@ jobs:
             fi
           done
 
-          # 通过 GITHUB_OUTPUT 设置输出变量 (新语法)
+          # 通过 GITHUB_OUTPUT 设置输出变量
           echo "folder_created=${CREATED}" >> $GITHUB_OUTPUT
 
       - name: 提交并推送新文件夹

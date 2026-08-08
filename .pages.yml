@@ -7,58 +7,59 @@ content:
     label: How To
     type: group
     items:
-      - name: new_file
-        label: New File
-        type: collection
-        path: content/how-to
-        filename: "{year}-{month}/{primary}.md"
-        view:
-          fields: [title, author, date, draft]
-          primary: title
-          sort: [date, title]
-          search: [title, author, body]
-          default:
-            sort: date
-            order: desc
-          fields:
-            - name: title
-              label: Title
-              type: string
-              required: true
-            - name: categories
-              label: Categories
-              type: select
-              required: true
-              default: clean-up-repair
-              options:
-                values:
-                  - clean-up-repair
-            - name: author
-              label: Author
-              type: string
-            - name: date
-              label: Publish Date
-              type: date
-              required: true
-            - name: featured_image
-              label: Featured Image
-              type: image
-            - name: draft
-              label: Draft
-              type: boolean
-              default: false
-            - name: nofollow_links
-              label: Nofollow external links
-              hidden: true
-              type: boolean
-              default: true
-            - name: body
-              label: Body
-              type: rich-text
       - name: how_to_clean_up_repair_months
         label: Clean Up & Repair
         type: group
-        items:  
+        items:
+          - name: new_file
+            label: New File
+            type: collection
+            path: content/how-to/clean-up-repair
+            filename: "{year}-{month}/{primary}.md"
+            view:
+              fields: [title, author, date, draft]
+              primary: title
+              sort: [date, title]
+              search: [title, author, body]
+              default:
+                sort: date
+                order: desc
+            fields:
+              - name: title
+                label: Title
+                type: string
+                required: true
+              - name: categories
+                label: Categories
+                type: select
+                required: true
+                default: clean-up-repair
+                options:
+                  values:
+                    - clean-up-repair
+              - name: author
+                label: Author
+                type: string
+              - name: date
+                label: Publish Date
+                type: date
+                required: true
+              - name: featured_image
+                label: Featured Image
+                type: image
+              - name: draft
+                label: Draft
+                type: boolean
+                default: false
+              - name: nofollow_links
+                label: Nofollow external links
+                hidden: true
+                type: boolean
+                default: true
+              - name: body
+                label: Body
+                type: rich-text
+                
           - name: how_to_clean_up_repair
             label: 2026-07
             type: collection
